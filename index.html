@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en">
+  <!--TODO: IE conditional classes -->
+
 	<head>
 		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--TODO: IE X-UA-Compatible -->
 		
-		<title></title>
+		<title>Gamers Guild</title>
 
 		<!-- Meta tags -->
 		<meta name="description" content="" />
@@ -17,11 +19,110 @@
 
 		<!-- JavaScript -->
 		<!--[if IE]><![endif]-->
-		<!--[if lt IE 9]>
-		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		<script src="assets/js/respond.min.js"></script>
+
+    <!--TODO: Get Modernizr, prefixfree -->
 	</head>
 	<body>
+    <header class="navigation">
+      <h1 class="navigation-title mega">Gamers Guild</h1>
+      <nav class="navigation-menu">
+        <ul class="navigation-list h1">
+          <li class="navigation-item"><a href="#page-home">Home</a></li>
+          <li class="navigation-item"><a href="#page-info">Info</a></li>
+          <li class="navigation-item"><a href="#page-leaders">Leaders</a></li>
+          <li class="navigation-item"><a href="#page-blog">Blog</a></li>
+          <li class="navigation-item"><a href="#page-calendar">Calendar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="page-section" id="page-home">
+      <h1 class="section-name">Home</h1>
+      <img class="logo" src="assets/img/logo.png" alt="Gamers Guild Logo" />
+      <article class="page-article">
+        <section class="text-section" id="introduction-text">
+          <h1>Hallo.</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry’s standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </section>
+        <section class="text-section" id="introduction-updates">
+          <h1>Updates</h1>
+          <ul class="introduction-updates-list">
+            <li><a href="#">The Montgomery Entertainment Expo is tomorrow!</a></li>
+            <li><a href="#">The cake is in fact a lie!</a></li>
+          </ul>
+        </section>
+      </article>
+    </section>
+
+    <section class="page-section" id="page-info">
+      <h1 class="section-name">Information</h1>
+      <article class="page-article">
+        <nav class="section-selector">
+          <ul class="section-selector-items">
+            <li><a href="#" class="current">History</a></li>
+            <li><a href="#">Meetings</a></li>
+            <li><a href="#">System</a></li>
+            <li><a href="#">Stories</a></li>
+          </ul>
+        </nav>
+        <section class="text-section" id="introduction-text">
+          <h1>Hallo.</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry’s standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </section>
+      </article>
+    </section>
+
+    <section class="page-section" id="page-leaders">
+      <h1 class="section-name">Leaders</h1>
+      <article class="page-article">
+        <ol class="leaders-list">
+          <li>John McDoe</li>
+          <li>Wayne McCaffrey</li>
+          <li>Penguin Man</li>
+          <li>Your Face Man</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="page-section" id="page-blog">
+      <h1 class="section-name">Blog</h1>
+      <article class="page-article">
+        <nav class="section-selector">
+          <ul class="section-selector-items">
+            <li><a href="#" class="current">May 2012</a></li>
+            <li><a href="#">April 2012</a></li>
+            <li><a href="#">March 2012</a></li>
+            <li><a href="#">February 2012</a></li>
+          </ul>
+        </nav>
+        <section class="text-section" id="introduction-text">
+          <h1>Hallo.</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry’s standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </section>
+      </article>
+    </section>
+
+    <section class="page-section" id="page-calendar">
+      <h1 class="section-name">Calendar</h1>
+      <article class="page-article">
+        <div id="calendar">
+        </div>
+      </article>
+    </section>
 	</body>
 </html>
