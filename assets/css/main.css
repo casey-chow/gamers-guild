@@ -6,6 +6,10 @@
 /* HTML5 display definitions
 ---------------------------------------- */
 
+* {
+  box-sizing: border-box;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, dialog {
 	display: block;
 }
@@ -46,8 +50,8 @@ html {
 }
 
 body {
-	margin: 0 auto;
 	height: 100%;
+	margin: 0 auto;
 }
 
 /* Fonts settings based on the 100E2R standard: http://www.informationarchitects.jp/en/100e2r/ */
@@ -415,6 +419,10 @@ sub {
 
 .navigation {
   font-family: "Sound System Regular", Verdana, sans-serif;
+  position: absolute;
+
+  margin-left: 10.99%; /* 1 col, 2 gut // 106 / 964 */
+  width: 53.73%; /* 7 col, 6 gut // 518 / 964 */
 }
 
 .navigation-title {
@@ -424,12 +432,15 @@ sub {
 .navigation-list {
   /* Mixins: .h1 */
   font-family: "SquareFont", "Sound System Regular", Verdana, sans-serif;
+  line-height: 1em;
   list-style-type: none;
+  margin-top: 0;
 }
 
 /* General Styles for Pages */
 .page-section {
-  height: 100%;
+  min-height: 100%; /* TODO: Should it be min-height or height? */
+  padding-top: 4.75em;
   width: 100%;
 }
 
@@ -453,14 +464,60 @@ sub {
 }
 
 #page-home .logo {
-  /* Width: 3 columns + 3 gutter */
-  width: 234px; /* TODO: Convert to % */
+  float: left;
+  margin-left: 10.99%; /* 1 col, 2 gut // 106 / 964 */
+  width: 24.27%; /* 3 col, 3 gut // 234 / 964 */
+}
+
+#page-home .text-section {
+  float: left;
+  margin-left: 2.9%; /* 1 gut // 28 / 964  */
+  width: 45.64%; /* 6 col, 5 gut // 440 / 964 */
+}
+
+.introduction-updates-list {
+  list-style-type: none;
 }
 
 /* -Information Page */
 
 #page-info {
   background: #EEE;
+}
+
+#page-info .with-section-selector {
+  /* Mixins: .group */
+  background-color: white;
+  border: 1px solid #CCC;
+  margin-left: 25.51%; /* 3 col, 3.5 gut // 248 /964 */
+  min-height: 75%;
+  width: 61.82%; /* 8 col, 7 gut // 596 / 964 */
+}
+
+#info-section-selector {
+  background-color: #F5F5F5;
+  -webkit-box-shadow:  4px 1px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow:  4px 1px 10px 0px rgba(0, 0, 0, 0.3);
+  float: left;
+  height: 100%;
+  padding-right: 2.35%; /* TODO: Align this */
+  padding-bottom: 5%;
+  text-align: right;
+  width: 23.82%; /* 2 col, 1.5 gut // 142 / 596 */
+}
+
+.section-selector-items {
+  /* Mixins: .h2 */
+  list-style-type: none;
+  margin-top: -0.125em;
+}
+
+#info-text {
+  float: left;
+  margin-left: 2.35%; /* 0.5 gut // 14 / 596 */
+  width: 73.83%; /* 6 col, 5 gut // 440 / 596 */
+  overflow-y: scroll;
+  padding-right: 2.35%;
 }
 
 /* -Leaders Page */
@@ -485,7 +542,9 @@ sub {
 ---------------------------------------- */
 
 /* Header style changes depending on what page it's in. */
-.navigation.is-home { }
+.navigation.is-home .navigation-title {
+  color: white;
+}
 .navigation.is-info { }
 .navigation.is-leaders { }
 .navigation.is-blog { }
