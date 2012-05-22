@@ -83,6 +83,7 @@
 
     <section class="page-section" id="page-leaders">
       <h1 class="section-name">Leaders</h1>
+      <!-- TODO: Arrow -->
       <ol class="leaders-list">
         <li>John McDoe</li>
         <li>Wayne McCaffrey</li>
@@ -93,15 +94,17 @@
 
     <section class="page-section" id="page-blog">
       <h1 class="section-name">Blog</h1>
-      <nav class="section-selector">
-        <ul class="section-selector-items">
-          <li><a href="#" class="current">May 2012</a></li>
-          <li><a href="#">April 2012</a></li>
-          <li><a href="#">March 2012</a></li>
-          <li><a href="#">February 2012</a></li>
-        </ul>
-      </nav>
-        <section class="text-section" id="introduction-text">
+      <div class="with-section-selector group">
+        <nav class="section-selector" id="blog-section-selector">
+          <h1>Blog</h1>
+          <ol class="section-selector-items">
+            <li><a href="#" class="current">May 2012</a></li>
+            <li><a href="#">April 2012</a></li>
+            <li><a href="#">March 2012</a></li>
+            <li><a href="#">February 2012</a></li>
+          </ol>
+        </nav>
+        <section class="text-section" id="blog-text">
           <h1>Hallo.</h1>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -110,6 +113,7 @@
             and scrambled it to make a type specimen book.
           </p>
         </section>
+      </div>
     </section>
 
     <section class="page-section" id="page-calendar">

@@ -506,7 +506,7 @@ sub {
   width: 23.82%; /* 2 col, 1.5 gut // 142 / 596 */
 }
 
-.section-selector-items {
+#page-info .section-selector-items {
   /* Mixins: .h2 */
   list-style-type: none;
   margin-top: -0.125em;
@@ -526,10 +526,59 @@ sub {
   background: #F4E900;
 }
 
+.leaders-list {
+  /* Mixins: .class-for-42px */
+  font-family: "SquareFont", "Courier New", monospace;
+  font-size: 2.3333em; /* 42px */
+  line-height: 1.1429em; /* 48px */
+  margin-top: 0.5714em;
+  margin-bottom: 0em;
+  margin-left: 35.37%; /* 4 col, 5 gut // 340 / 964 */
+  width: 53.73%; /* 7 col, 6 gut // 518 / 964 */
+}
+
+.leaders-list li:first-child {
+  /* Mixins: mega */
+  font-size: 1.7857em; /* 75px */
+  line-height: 1.28em; /* 96px */
+  margin-top: 0.32em;
+  margin-bottom: 0em;
+}
+
 /* -Blog Page */
 
 #page-blog {
   background: #DDD url('../img/project_paper.png') repeat top center;
+}
+
+#page-blog .with-section-selector {
+  /* Mixins: .group */
+  margin-left: 25.51%; /* 3 col, 3.5 gut // 248 /964 */
+  min-height: 75%;
+  width: 61.82%; /* 8 col, 7 gut // 596 / 964 */
+}
+
+#blog-section-selector {
+  float: left;
+  height: 100%;
+  padding-right: 2.35%; /* TODO: Align this */
+  padding-bottom: 5%;
+  text-align: right;
+  width: 23.82%; /* 2 col, 1.5 gut // 142 / 596 */
+}
+
+#page-blog .section-selector-items {
+  /* Mixins: .h2 */
+  list-style-type: none;
+  margin-top: -0.125em;
+}
+
+#blog-text {
+  float: left;
+  margin-left: 2.35%; /* 0.5 gut // 14 / 596 */
+  width: 73.83%; /* 6 col, 5 gut // 440 / 596 */
+  overflow-y: scroll;
+  padding-right: 2.35%;
 }
 
 /* -Calendar Page */
