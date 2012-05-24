@@ -32,11 +32,13 @@
             }
           }
         }
+      , { load:  'assets/js/waypoints.js' }
+      , { load: 'assets/js/pages.js' }
       ]);
     </script>
 	</head>
 	<body>
-    <header class="navigation">
+    <header id="navigation">
       <h1 class="navigation-title mega">Gamers Guild</h1>
       <nav class="navigation-menu">
         <ul class="navigation-list h1">
@@ -49,18 +51,19 @@
       </nav>
     </header>
 
-    <section class="page-section group" id="page-home">
+    <section class="page-section" id="page-home">
       <h1 class="section-name">Home</h1>
-      <img class="logo" src="assets/img/logo.png" alt="Gamers Guild Logo" />
-      <section class="text-section" id="introduction-text">
-        <h1>Hallo.</h1>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry’s standard dummy text
-          ever since the 1500s, when an unknown printer took a galley of type
-          and scrambled it to make a type specimen book.
-        </p>
-      </section>
+      <div class="page-section-inner group">
+        <img class="logo" src="assets/img/logo.png" alt="Gamers Guild Logo" />
+        <section class="text-section" id="introduction-text">
+          <h1>Hallo.</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry’s standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </section>
         <section class="text-section" id="introduction-updates">
           <h1>Updates</h1>
           <ul class="introduction-updates-list">
@@ -68,11 +71,12 @@
             <li><a href="#">The cake is in fact a lie!</a></li>
           </ul>
         </section>
+      </div>
     </section>
 
-    <section class="page-section group" id="page-info">
+    <section class="page-section" id="page-info">
       <h1 class="section-name">Information</h1>
-      <div class="with-section-selector group">
+      <div class="page-section-inner group">
         <nav class="section-selector" id="info-section-selector">
           <h1>Info</h1>
           <ul class="section-selector-items h2">
@@ -82,7 +86,7 @@
             <li><a href="#">Stories</a></li>
           </ul>
         </nav>
-        <section class="text-section" id="info-text">
+        <article class="text-article" id="info-text">
           <h1>Hallo.</h1>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -90,19 +94,21 @@
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book.
           </p>
-        </section>
+        </article>
       </div>
     </section>
 
-    <section class="page-section group" id="page-leaders">
+    <section class="page-section" id="page-leaders">
       <h1 class="section-name">Leaders</h1>
-      <!-- TODO: Arrow -->
-      <ol class="leaders-list">
-        <li>John McDoe</li>
-        <li>Wayne McCaffrey</li>
-        <li>Penguin Man</li>
-        <li>Your Face Man</li>
-      </ol>
+      <div class="page-section-inner group">
+        <!-- TODO: Arrow -->
+        <ol class="leaders-list">
+          <li>John McDoe</li>
+          <li>Wayne McCaffrey</li>
+          <li>Penguin Man</li>
+          <li>Your Face Man</li>
+        </ol>
+      </div>
     </section>
 
     <section class="page-section group" id="page-blog">
@@ -117,7 +123,7 @@
             <li><a href="#">February 2012</a></li>
           </ol>
         </nav>
-        <section class="text-section" id="blog-text">
+        <article class="text-section" id="blog-text">
           <h1>Hallo.</h1>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -125,7 +131,7 @@
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book.
           </p>
-        </section>
+        </article>
       </div>
     </section>
 

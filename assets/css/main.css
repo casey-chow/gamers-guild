@@ -418,7 +418,7 @@ sub {
 
 /* Header and Navigation */
 
-.navigation {
+#navigation {
   font-family: "Sound System Regular", Verdana, sans-serif;
   position: absolute;
 
@@ -493,7 +493,7 @@ sub {
   background: #EEE;
 }
 
-#page-info .with-section-selector {
+#page-info .page-section-inner {
   /* Mixins: .group */
   background-color: white;
   border: 1px solid #CCC;
@@ -599,13 +599,13 @@ sub {
 ---------------------------------------- */
 
 /* Header style changes depending on what page it's in. */
-.navigation.is-home .navigation-title {
+#navigation.is-home .navigation-title {
   color: white;
 }
-.navigation.is-info { }
-.navigation.is-leaders { }
-.navigation.is-blog { }
-.navigation.is-calendar { }
+#navigation.is-info { }
+#navigation.is-leaders { }
+#navigation.is-blog { }
+#navigation.is-calendar { }
 
 /* Media queries
 ---------------------------------------- */
