@@ -21,6 +21,19 @@
 		<!--[if IE]><![endif]-->
 
     <!--TODO: Get Modernizr, prefixfree -->
+    <script src="assets/js/modernizr.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      Modernizr.load([
+        { 
+          load: '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js'
+        , complete: function() {
+            if(!window.jQuery) { 
+              Modernizr.load('assets/js/jquery.js'); 
+            }
+          }
+        }
+      ]);
+    </script>
 	</head>
 	<body>
     <header class="navigation">
