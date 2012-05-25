@@ -432,7 +432,8 @@ sub {
 }
 
 .navigation-list {
-  /* Mixins: .h1 */
+  /* Mixins: .h1, .group */
+  display: inline;
   font-family: "SquareFont", "Sound System Regular", Verdana, sans-serif;
   line-height: 1em;
   list-style-type: none;
@@ -455,6 +456,12 @@ sub {
   padding-top: 4.75em;
   width: 100%;
   z-index: -1;
+}
+
+.page-section-inner {
+  /* create a new stacking context */
+  position: relative;
+  z-index: 100;
 }
 
 .section-name {
@@ -503,19 +510,24 @@ sub {
   /* Mixins: .group */
   background-color: white;
   border: 1px solid #CCC;
+  margin-top: 1.75em;
   margin-left: 25.51%; /* 3 col, 3.5 gut // 248 /964 */
   min-height: 75%;
   width: 61.82%; /* 8 col, 7 gut // 596 / 964 */
+}
+
+#page-info .page-section-inner h1 {
+  margin-top: 0.6571em;
 }
 
 #info-section-selector {
   background-color: #F5F5F5;
   -webkit-box-shadow:  4px 1px 10px 0px rgba(0, 0, 0, 0.3);
   box-shadow:  4px 1px 10px 0px rgba(0, 0, 0, 0.3);
-  float: left;
   height: 100%;
   padding-right: 2.35%; /* TODO: Align this */
   padding-bottom: 5%;
+  position: absolute;
   text-align: right;
   width: 23.82%; /* 2 col, 1.5 gut // 142 / 596 */
 }
@@ -527,7 +539,7 @@ sub {
 }
 
 #info-text {
-  float: left;
+  float: right;
   margin-left: 2.35%; /* 0.5 gut // 14 / 596 */
   width: 73.83%; /* 6 col, 5 gut // 440 / 596 */
   overflow-y: scroll;
