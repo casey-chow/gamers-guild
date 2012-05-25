@@ -49,7 +49,7 @@ $(function() {
       else if ( location.hash !== old_hash ) { //is a hashchange
         old_hash = location.hash;
         return -1;
-      } else { return 10; }
+      } else { return 70; }
     }
   });
 

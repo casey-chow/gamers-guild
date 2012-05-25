@@ -424,11 +424,11 @@ sub {
 
   margin-left: 10.99%; /* 1 col, 2 gut // 106 / 964 */
   width: 53.73%; /* 7 col, 6 gut // 518 / 964 */
-  z-index: 10;
 }
 
 .navigation-title {
   /* Mixins: .mega */
+  z-index: 10;
 }
 
 .navigation-list {
@@ -481,6 +481,10 @@ sub {
 #page-home {
   background: #222 url('../img/dark_dotted.png') repeat top left;
   color: #E5E5E5;
+}
+
+#page-home .page-section-inner {
+  position: static; /* remove stacking context */
 }
 
 #page-home .logo {
@@ -552,15 +556,18 @@ sub {
   background: #F4E900;
 }
 
+#page-leaders .page-section-inner {
+  margin-top: 0.5714em;
+  margin-bottom: 0em;
+  margin-left: 35.37%; /* 4 col, 5 gut // 340 / 964 */
+  width: 53.73%; /* 7 col, 6 gut // 518 / 964 */
+}
+
 .leaders-list {
   /* Mixins: .class-for-42px */
   font-family: "SquareFont", "Courier New", monospace;
   font-size: 2.3333em; /* 42px */
   line-height: 1.1429em; /* 48px */
-  margin-top: 0.5714em;
-  margin-bottom: 0em;
-  margin-left: 35.37%; /* 4 col, 5 gut // 340 / 964 */
-  width: 53.73%; /* 7 col, 6 gut // 518 / 964 */
 }
 
 .leaders-list li:first-child {
@@ -577,7 +584,7 @@ sub {
   background: #DDD url('../img/project_paper.png') repeat top center;
 }
 
-#page-blog .with-section-selector {
+#page-blog .page-section-inner {
   /* Mixins: .group */
   margin-left: 25.51%; /* 3 col, 3.5 gut // 248 /964 */
   min-height: 75%;
