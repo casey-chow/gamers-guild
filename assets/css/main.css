@@ -443,9 +443,15 @@ sub {
   border-bottom: none;
 }
 
+.navigation-item {
+  float: left;
+  clear: left;
+  display: inline; /* keep it from expanding the whole way */
+}
+
 /* General Styles for Pages */
 .page-section {
-  min-height: 100%; /* TODO: Should it be min-height or height? */
+  min-height: 110%;
   padding-top: 4.75em;
   width: 100%;
   z-index: -1;
