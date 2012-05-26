@@ -35,12 +35,6 @@ audio:not([controls]) {
 /* Base structure
 ---------------------------------------- */
 
-/*
-	* The body will work like a 'div#wrapper' (for this to work, the 'body' needs to have a set width)
-
-	* To add a background to the PAGE, set it in the 'html' element
-	* To add a background to the WRAPPER, set it in the 'body' element
-*/
 html {
 	height: 100%;
   font-size: 112.5%; /* 18px */
@@ -70,7 +64,7 @@ p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldse
 ---------------------------------------- */
 
 body {
-  font-family: "PT Sans", Verdana, sans-serif;
+  font-family: 'PT Sans Regular', Verdana, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -320,6 +314,10 @@ del {
 /* Others
 ---------------------------------------- */
 
+em, q, cite {
+  font-family: 'PT Sans Italic', Verdana, sans-serif;
+}
+
 hr {
 	display: block;
 	height: 1px;
@@ -328,7 +326,7 @@ hr {
 }
 
 strong, b, dt {
-	font-weight: bold;
+  font-family: 'PT Sans Bold', Verdana, sans-serif;
 }
 
 dfn {
@@ -358,22 +356,14 @@ sub {
 /* =Helper classes
 ---------------------------------------- */
 
-/*
-	* Micro clearfix hack, more semantically titled with 'group'
-	* Source: nicolasgallagher.com/micro-clearfix-hack/
-*/
-.group:before, .group:after {
-	content: "";
-	display: table;
+.bold {
+  font-family: 'PT Sans Bold', Verdana, sans-serif;
 }
 
-.group:after {
-	clear: both;
+.italic {
+  font-family: 'PT Sans Italic', Verdana, sans-serif;
 }
 
-.group {
-	*zoom: 1;
-}
 
 .depth {
     display: block;
@@ -391,6 +381,23 @@ sub {
 
 .depth:before { top: 1px; left: 1px }
 .depth:after  { top: 2px; left: 2px }
+
+/*
+	* Micro clearfix hack, more semantically titled with 'group'
+	* Source: nicolasgallagher.com/micro-clearfix-hack/
+*/
+.group:before, .group:after {
+	content: "";
+	display: table;
+}
+
+.group:after {
+	clear: both;
+}
+
+.group {
+	*zoom: 1;
+}
 
 .visually-hidden {
   border: 0;
@@ -419,7 +426,7 @@ sub {
 /* Header and Navigation */
 
 #navigation {
-  font-family: "Sound System Regular", Verdana, sans-serif;
+  font-family: 'Sound System', Verdana, sans-serif;
   position: absolute;
 
   margin-left: 10.99%; /* 1 col, 2 gut // 106 / 964 */
@@ -434,7 +441,7 @@ sub {
 .navigation-list {
   /* Mixins: .h1, .group */
   display: inline;
-  font-family: "SquareFont", "Sound System Regular", Verdana, sans-serif;
+  font-family: 'SquareFont', 'Sound System', Verdana, sans-serif;
   line-height: 1em;
   list-style-type: none;
   margin-top: 0;
