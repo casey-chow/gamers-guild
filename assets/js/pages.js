@@ -4,6 +4,11 @@ $(function() {
 
   /* Function Definitions
    * ----------------------------------------------- */
+  function is_between (num, btm, top, tolerance) {
+    var above_lower = num >= (btm - tolerance);
+    var below_upper = num <= (top + tolerance);
+    return above_lower && below_upper;
+  }
 
   function page_name ($page) {
     return $page.attr('id').split('-')[1]; //Expected: #page-home
@@ -12,8 +17,6 @@ $(function() {
   function move_navigation($page) {
     var $nav = $('#navigation');
     var yoffset = $page.offset().top;
-
-    console.log('Moving nav to', page_name($page));
 
     $nav
       .removeClass() // remove all classes
@@ -75,19 +78,22 @@ $(function() {
     if (evt.keyCode < 37 && evt.keyCode > 40) { return; }
 
     var $win = $(window);
-    var viewport_top = $win.scrollTop();
-    var viewport_bot = viewport_top + $win.height();
     var $current, $target;
 
-    // find first page in viewport
-    // theoretically, only one top should be in the viewport at a time
+    var win_top = $win.scrollTop();
+    var win_bot = win_top + $win.height();
+
+    // Find first page in viewport
     $('.page-section').each(function() {
-      var $this = $(this);
-      var offset = $this.offset().top;
-      if ( offset >= viewport_top && offset < viewport_bot ) {
-        $current = $this;
+      var offset = $(this).offset().top;
+      // if element is in viewport (give or take)
+      if ( is_between(offset, win_top, win_bot, 50) ) {
+        $current = $(this);
+        return false; //short circuit
       }
     });
+
+    console.log($current);
 
     switch(evt.keyCode) {
       case 37: // left
