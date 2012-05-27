@@ -120,8 +120,6 @@ $(function() {
   /* Changing Hash on Scroll
    * ------------------------------------------- */
 
-  // TODO: function that changes the hash on scroll
-
   // If there's no hash, assume it should be at home
   if (!location.hash) { $('#navigation').addClass('is-home'); }
   else { move_navigation($(location.hash)); }

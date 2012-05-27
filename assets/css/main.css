@@ -1,8 +1,63 @@
 /* TODO: IE conditional classes */
-/* TODO: Convert px sizes to ems */
 
-/* TODO */
-/*@font-face {}*/
+/* =@font-face Declarations
+ * --------------------------------- */
+
+@font-face {
+    font-family: 'SquareFont';
+    src: url('../fonts/squarefont/square-webfont.eot');
+    src: url('../fonts/squarefont/square-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/squarefont/square-webfont.woff') format('woff'),
+         url('../fonts/squarefont/square-webfont.ttf') format('truetype'),
+         url('../fonts/squarefont/square-webfont.svg#SquareFontRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sound System';
+    src: url('../fonts/sound-system/sound-system-webfont.eot');
+    src: url('../fonts/sound-system/sound-system-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sound-system/sound-system-webfont.woff') format('woff'),
+         url('../fonts/sound-system/sound-system-webfont.ttf') format('truetype'),
+         url('../fonts/sound-system/sound-system-webfont.svg#SoundSystemRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans Regular';
+    src: url('../fonts/pt-sans/PTS55F-webfont.eot');
+    src: url('../fonts/pt-sans/PTS55F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pt-sans/PTS55F-webfont.woff') format('woff'),
+         url('../fonts/pt-sans/PTS55F-webfont.ttf') format('truetype'),
+         url('../fonts/pt-sans/PTS55F-webfont.svg#PTSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'PT Sans Bold';
+    src: url('../fonts/pt-sans/PTS75F-webfont.eot');
+    src: url('../fonts/pt-sans/PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pt-sans/PTS75F-webfont.woff') format('woff'),
+         url('../fonts/pt-sans/PTS75F-webfont.ttf') format('truetype'),
+         url('../fonts/pt-sans/PTS75F-webfont.svg#PTSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans Italic';
+    src: url('../fonts/pt-sans/PTS56F-webfont.eot');
+    src: url('../fonts/pt-sans/PTS56F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pt-sans/PTS56F-webfont.woff') format('woff'),
+         url('../fonts/pt-sans/PTS56F-webfont.ttf') format('truetype'),
+         url('../fonts/pt-sans/PTS56F-webfont.svg#PTSansItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* HTML5 display definitions
 ---------------------------------------- */
