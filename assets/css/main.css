@@ -483,6 +483,7 @@ sub {
   width: 1px;
 }
 
+
 /* -Home Page */
 
 #page-home {
@@ -491,25 +492,24 @@ sub {
 }
 
 #page-home .page-section-inner {
-  position: static; /* remove stacking context */
+  margin-left: 41.5%;
+  width: 45.64%; /* 6 col, 5 gut // 440 / 964 */
 }
 
 #page-home .logo {
   float: left;
   margin-top: 11em;
-  margin-left: 10.99%; /* 1 col, 2 gut // 106 / 964 */
-  width: 24.27%; /* 3 col, 3 gut // 234 / 964 */
+  margin-left: -70.9%; /* 4 col, 4 gut // 312 / 440 */
+  width: 52.18%; /* 3 col, 3 gut // 234 / 440 */
 }
 
 #page-home .text-section {
-  float: left;
-  margin-left: 2.9%; /* 1 gut // 28 / 964  */
-  width: 45.64%; /* 6 col, 5 gut // 440 / 964 */
 }
 
 .introduction-updates-list {
   list-style-type: none;
 }
+
 
 /* -Information Page */
 
