@@ -40,17 +40,21 @@ $(function() {
   var old_hash;
 
   $('.page-section').waypoint(function(evt, dir) {
-    var $page = $(this);
-    move_navigation($page);
-  }, { 
-    offset: function() {
-      //FIXME doesn't work right in the up direction
-      if ( $(this).is('#page-home') ) { return -25; }
-      else if ( location.hash !== old_hash ) { //is a hashchange
-        old_hash = location.hash;
-        return -1;
-      } else { return 70; }
+    if (dir === 'down') {
+      move_navigation($(this));
     }
+  }, { 
+    offset: '12.5%'
+  });
+
+  // Bind a waypoint to the inner so that it works upwards too
+  // https://github.com/imakewebthings/jquery-waypoints/issues/31
+  $('.page-section-inner').waypoint(function(evt, dir) {
+    if (dir === 'up') {
+      move_navigation($(this).parent());
+    }
+  }, {
+    offset: '-12.5%'
   });
 
   // Catch it if a hash change doesn't move the navigation
