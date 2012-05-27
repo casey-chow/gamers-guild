@@ -17,13 +17,23 @@ $(function() {
   function move_navigation($page) {
     var $nav = $('#navigation');
     var yoffset = $page.offset().top;
+    var _page_name = page_name($page);
 
     $nav
       .removeClass() // remove all classes
-      .addClass('is-' + page_name($page))
+      .addClass('is-' + _page_name)
       .animate({ top: yoffset }, 200); // pull the nav down
 
-    last_location = page_name($page);
+    // TODO: refactor with jQuery combinators
+    $nav
+      .find('a.is-active')
+        .removeClass('is-active')
+
+    $nav
+      .find('[href=#page-' + _page_name + ']')
+        .addClass('is-active')
+
+    last_location = _page_name;
   }
 
   function scroll_to(position, duration, easing, callback) {

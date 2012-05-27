@@ -689,8 +689,19 @@ sub {
 #navigation.is-home .navigation-title {
   color: white;
 }
-#navigation.is-info { }
-#navigation.is-leaders { }
+
+#navigation.is-info { 
+}
+
+#navigation.is-leaders .navigation-item { 
+  color: black;
+}
+
+#navigation.is-leaders .navigation-item.is-active {
+  color: white;
+  background-color: black;
+}
+
 #navigation.is-blog { }
 #navigation.is-calendar { }
 
