@@ -111,6 +111,6 @@ $(function() {
    * ------------------------------------------- */
 
   // If there's no hash, assume it should be at home
-  if (!location.hash) { $('#navigation').addClass('is-home'); }
+  if (!location.hash && $(window).scrollTop() === 0) { $('#navigation').addClass('is-home'); }
   else { move_navigation($(location.hash)); }
 });

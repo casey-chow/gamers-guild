@@ -667,26 +667,42 @@ sub {
 ---------------------------------------- */
 
 /* Header style changes depending on what page it's in. */
-#navigation.is-home .navigation-title {
-  color: white;
-}
-
-#navigation.is-info .navigation-item.is-active {
-  text-shadow: 0px 0px 4px #AAA;
-  filter: dropshadow(color=#AAA, offx=0, offy=0);
-}
-
-#navigation.is-leaders .navigation-item { 
+a.navigation-item {
   color: black;
 }
 
-#navigation.is-leaders .navigation-item.is-active {
-  color: white;
-  background-color: black;
+.navigation-item.is-active {
+  color: #06c;
 }
 
-#navigation.is-blog { }
-#navigation.is-calendar { }
+.is-home .navigation-title {
+  color: white;
+}
+
+.is-home .navigation-item {
+  color: #06c;
+}
+
+.is-home .navigation-item.is-active {
+  color: white;
+}
+
+.is-info { }
+
+.is-leaders .navigation-item { 
+  color: black;
+}
+
+.is-leaders .is-active {
+  color: white;
+  background-color: black;
+  margin-left: -0.125em;
+  padding: 0 0.125em;
+}
+
+.is-blog { }
+
+.is-calendar { }
 
 /* Media queries
 ---------------------------------------- */
