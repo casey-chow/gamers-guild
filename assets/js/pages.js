@@ -70,7 +70,8 @@ $(function() {
 
   // by keys
   $(document).keydown(function(evt) {
-    if (evt.keyCode < 37 && evt.keyCode > 40) { return; }
+    var key = evt.keyCode;
+    if (key < 37 && key > 40 || key < 74 && key > 75) { return; }
 
     var $win = $(window);
     var $current, $target;
@@ -91,10 +92,12 @@ $(function() {
     switch(evt.keyCode) {
       case 37: // left
       case 38: // up
+      case 75: // k
         $target = $current.prev();
         break;
       case 39: // right
       case 40: // down
+      case 74: // j
         $target = $current.next();
         break;
     }
