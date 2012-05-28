@@ -18,24 +18,27 @@
 
     <script src="assets/js/head.js"></script>
     <script type="text/javascript">
-      function load_rest() {
-        head
-          .js('assets/js/prefixfree.js')
-          .js('assets/js/waypoints.js')
-          .js('assets/js/pages.js')
-          ;
-      }
+      (function() {
+         function load_js(local) {
+           head
+             .js(local === 'local' ? 
+                 '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
+               : 'assets/js/jquery.js'
+               )
+             .js('assets/js/prefixfree.js')
+             .js('assets/js/waypoints.js')
+             .js('assets/js/pages.js')
+           ;
+         }
 
-      head.js('//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js');
-      load_rest();
+         load_js();
 
-      setTimeout(function() {
-        if (!window.jQuery) {
-          head.js('assets/js/jquery.js');
-          load_rest();
-        }
-      }, 3000);
-    </script>
+         setTimeout(function() {
+           if (!window.jQuery) { load_js('local'); }
+         }, 3000);
+
+       }());    
+     </script>
 	</head>
 	<body>
     <header id="navigation">
