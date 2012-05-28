@@ -671,7 +671,9 @@ sub {
   color: white;
 }
 
-#navigation.is-info { 
+#navigation.is-info .navigation-item.is-active {
+  text-shadow: 0px 0px 4px #AAA;
+  filter: dropshadow(color=#AAA, offx=0, offy=0);
 }
 
 #navigation.is-leaders .navigation-item { 

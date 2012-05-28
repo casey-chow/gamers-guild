@@ -1,8 +1,7 @@
 /* Modernizr 2.5.3 (Custom Build) | MIT & BSD
- * Build: http://www.modernizr.com/download/#-fontface-borderradius-boxshadow-rgba-textshadow-generatedcontent-cssgradients-csstransitions-hashchange-history-shiv-mq-cssclasses-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-cssclassprefix:mod!
+ * Build: http://www.modernizr.com/download/#-fontface-borderradius-boxshadow-rgba-textshadow-generatedcontent-cssgradients-csstransitions-hashchange-history-mq-cssclasses-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-cssclassprefix:mod!
  */
 ;
-
 
 
 window.Modernizr = (function( window, document, undefined ) {
@@ -334,107 +333,6 @@ window.Modernizr = (function( window, document, undefined ) {
     setCss('');
     modElem = inputElem = null;
 
-    ;(function(window, document) {
-
-        var options = window.html5 || {};
-
-        var reSkip = /^<|^(?:button|form|map|select|textarea)$/i;
-
-        var supportsHtml5Styles;
-
-        var supportsUnknownElements;
-
-      (function() {
-        var a = document.createElement('a');
-
-        a.innerHTML = '<xyz></xyz>';
-
-            supportsHtml5Styles = ('hidden' in a);
-        supportsUnknownElements = a.childNodes.length == 1 || (function() {
-                try {
-            (document.createElement)('a');
-          } catch(e) {
-            return true;
-          }
-          var frag = document.createDocumentFragment();
-          return (
-            typeof frag.cloneNode == 'undefined' ||
-            typeof frag.createDocumentFragment == 'undefined' ||
-            typeof frag.createElement == 'undefined'
-          );
-        }());
-
-      }());        function addStyleSheet(ownerDocument, cssText) {
-        var p = ownerDocument.createElement('p'),
-            parent = ownerDocument.getElementsByTagName('head')[0] || ownerDocument.documentElement;
-
-        p.innerHTML = 'x<style>' + cssText + '</style>';
-        return parent.insertBefore(p.lastChild, parent.firstChild);
-      }
-
-        function getElements() {
-        var elements = html5.elements;
-        return typeof elements == 'string' ? elements.split(' ') : elements;
-      }
-
-        function shivMethods(ownerDocument) {
-        var cache = {},
-            docCreateElement = ownerDocument.createElement,
-            docCreateFragment = ownerDocument.createDocumentFragment,
-            frag = docCreateFragment();
-
-
-        ownerDocument.createElement = function(nodeName) {
-                                                    var node = (cache[nodeName] || (cache[nodeName] = docCreateElement(nodeName))).cloneNode();
-          return html5.shivMethods && node.canHaveChildren && !reSkip.test(nodeName) ? frag.appendChild(node) : node;
-        };
-
-        ownerDocument.createDocumentFragment = Function('h,f', 'return function(){' +
-          'var n=f.cloneNode(),c=n.createElement;' +
-          'h.shivMethods&&(' +
-                    getElements().join().replace(/\w+/g, function(nodeName) {
-              cache[nodeName] = docCreateElement(nodeName);
-              frag.createElement(nodeName);
-              return 'c("' + nodeName + '")';
-            }) +
-          ');return n}'
-        )(html5, frag);
-      }        function shivDocument(ownerDocument) {
-        var shived;
-        if (ownerDocument.documentShived) {
-          return ownerDocument;
-        }
-        if (html5.shivCSS && !supportsHtml5Styles) {
-          shived = !!addStyleSheet(ownerDocument,
-                    'article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}' +
-                    'audio{display:none}' +
-                    'canvas,video{display:inline-block;*display:inline;*zoom:1}' +
-                    '[hidden]{display:none}audio[controls]{display:inline-block;*display:inline;*zoom:1}' +
-                    'mark{background:#FF0;color:#000}'
-          );
-        }
-        if (!supportsUnknownElements) {
-          shived = !shivMethods(ownerDocument);
-        }
-        if (shived) {
-          ownerDocument.documentShived = shived;
-        }
-        return ownerDocument;
-      }        var html5 = {
-
-            'elements': options.elements || 'abbr article aside audio bdi canvas data datalist details figcaption figure footer header hgroup mark meter nav output progress section summary time video',
-
-            'shivCSS': !(options.shivCSS === false),
-
-            'shivMethods': !(options.shivMethods === false),
-
-            'type': 'default',
-            'shivDocument': shivDocument
-      };        window.html5 = html5;
-
-        shivDocument(document);
-
-    }(this, document));
 
     Modernizr._version      = version;
 
