@@ -22,16 +22,15 @@ $(function() {
     $nav
       .removeClass() // remove all classes
       .addClass('is-' + _page_name)
-      .animate({ top: yoffset }, 200); // pull the nav down
-
-    // TODO: refactor with jQuery combinators
-    $nav
+      .animate({ top: yoffset }, 200) // pull the nav down
+      // put the is-active class on the right thing
       .find('a.is-active')
         .removeClass('is-active')
-
-    $nav
+        .end()
       .find('[href=#page-' + _page_name + ']')
         .addClass('is-active')
+        .end()
+
 
     last_location = _page_name;
   }
@@ -42,6 +41,7 @@ $(function() {
 
     $('html,body').animate({ scrollTop: position }, 'slow', easing, callback);
     // TODO: Change hash on scroll
+
   }
 
   $.waypoints.settings.scrollThrottle = 15;
@@ -102,8 +102,6 @@ $(function() {
         return false; //short circuit
       }
     });
-
-    console.log($current);
 
     switch(evt.keyCode) {
       case 37: // left
