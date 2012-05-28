@@ -95,8 +95,7 @@ html {
   font-size: 112.5%; /* 18px */
   /*font-size: 100%;*/
 	overflow-y: scroll; /* Force a scrollbar in non-IE */
-	-webkit-text-size-adjust: 100%; /* Prevent iOS text size adjust on orientation change without disabling user zoom */
-	-ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {

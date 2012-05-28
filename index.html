@@ -33,14 +33,16 @@
       $LAB
         .script('//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js')
         .script('assets/js/modernizr.js')
+        .script('assets/js/prefixfree.js')
         .wait(load_rest)
         ;
 
-      setTimeout(function() {
+      setTimeout(function () {
         if (!window.jQuery) {
           $LAB
             .script('assets/js/jquery.js')
-            .wait(load_rest);
+            .wait(load_rest)
+            ;
         }
       }, 3000);
     </script>
