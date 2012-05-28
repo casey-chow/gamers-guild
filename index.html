@@ -21,21 +21,29 @@
 		<!-- JavaScript -->
 		<!--[if IE]><![endif]-->
 
-    <script src="assets/js/modernizr.js"></script>
+    <script src="assets/js/lab.js"></script>
     <script type="text/javascript" charset="utf-8">
-      Modernizr.load([
-        { 
-          load: '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js'
-        , complete: function() {
-            if(!window.jQuery) { 
-              Modernizr.load('assets/js/jquery.js'); 
-            }
-          }
+      function load_rest () {
+        $LAB
+          .script('assets/js/waypoints.js')
+          .script('assets/js/hashchange.js').wait()
+          .script('assets/js/pages.js')
+          ;
+      }
+
+      $LAB
+        .script('//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js')
+        .script('assets/js/modernizr.js')
+        .wait(load_rest)
+        ;
+
+      setTimeout(function() {
+        if (!window.jQuery) {
+          $LAB
+            .script('assets/js/jquery.js')
+            .wait(load_rest);
         }
-      , { load: 'assets/js/waypoints.js' }
-      , { load: 'assets/js/hashchange.js' }
-      , { load: 'assets/js/pages.js' }
-      ]);
+      }, 3000);
     </script>
 	</head>
 	<body>
