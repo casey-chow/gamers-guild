@@ -1,7 +1,5 @@
 $(function() {
 
-  var last_location;
-
   /* Function Definitions
    * ----------------------------------------------- */
   function is_between (num, btm, top, tolerance) {
@@ -31,8 +29,9 @@ $(function() {
         .addClass('is-active')
         .end()
 
-
-    last_location = _page_name;
+    if (window.history.pushState) {
+      history.pushState(null, null, '#page-' + _page_name);
+    }
   }
 
   function scroll_to(position, duration, easing, callback) {
@@ -40,8 +39,6 @@ $(function() {
     if ( position === 'top' ) { position = 0; }
 
     $('html,body').animate({ scrollTop: position }, 'slow', easing, callback);
-    // TODO: Change hash on scroll
-
   }
 
   $.waypoints.settings.scrollThrottle = 15;
@@ -49,8 +46,6 @@ $(function() {
 
   /* Moving the Navigation Between Pages
    * ---------------------------------------------- */
-
-  var old_hash;
 
   $('.page-section').waypoint(function(evt, dir) {
     if (dir === 'down') {
@@ -68,16 +63,6 @@ $(function() {
     }
   }, {
     offset: '-12.5%'
-  });
-
-  // Catch it if a hash change doesn't move the navigation
-  $(window).hashChange(function() {
-    var page_name = location.hash.slice(1);
-    setTimeout(function() {
-      if (last_location !== page_name) {
-        move_navigation($('#' + page_name));
-      }
-    }, 201);
   });
 
   /* Moving between Pages
@@ -116,13 +101,7 @@ $(function() {
 
     if (!$target) { return; }
 
-    // scroll to the page identified
     scroll_to($target);
-    setTimeout(function() {
-      if (last_location !== page_name($target)) {
-        move_navigation($('#page-' + page_name($target)));
-      }
-    }, 401);
   });
 
   /* Changing Hash on Scroll
@@ -131,5 +110,4 @@ $(function() {
   // If there's no hash, assume it should be at home
   if (!location.hash) { $('#navigation').addClass('is-home'); }
   else { move_navigation($(location.hash)); }
-
 });
