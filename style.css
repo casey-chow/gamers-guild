@@ -7,160 +7,714 @@ Author URI: http://monkeydo.biz
 Version: 1
 */
 
-/*
-	HTML5 Reset Wordpress Theme :: style.css
-	----------------------------------------------------------
-	We have learned much from/been inspired by/taken code where offered from:
-	
-	Eric Meyer					:: http://ericmeyer.com
-	HTML5 Doctor				:: http://html5doctor.com
-	and the HTML5 Boilerplate	:: http://html5boilerplate.com
-	
-	Special thanks: The Wordpress theme owes its start to an empty theme authored 
-		by Chris Coyier & Jeff Starr: http://digwp.com
-	
--------------------------------------------------------------------------------*/
+/* =@font-face Declarations
+ * --------------------------------- */
 
-/* Let's default this puppy out
--------------------------------------------------------------------------------*/
-
-html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
-}									
-
-article, aside, figure, footer, header, hgroup, nav, section {display: block;}
-
-/* Responsive images and other embedded objects
-   Note: keeping IMG here will cause problems if you're using foreground images as sprites, like, say for Google Maps custom placemarkers. 
-   There has been a report of problems with standard Google maps as well, but we haven't been able to duplicate or diagnose the issue. */
-img,
-object,
-embed {max-width: 100%;}
-
-/* force a vertical scrollbar to prevent a jumpy page */
-html {overflow-y: scroll;}
-
-/* we use a lot of ULs that aren't bulleted. 
-	don't forget to restore the bullets within content. */
-ul {list-style: none;}
-
-blockquote, q {quotes: none;}
-
-blockquote:before, 
-blockquote:after, 
-q:before, 
-q:after {content: ''; content: none;}
-
-a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
-
-del {text-decoration: line-through;}
-
-abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
-
-/* tables still need cellspacing="0" in the markup */
-table {border-collapse: collapse; border-spacing: 0;}
-th {font-weight: bold; vertical-align: bottom;}
-td {font-weight: normal; vertical-align: top;}
-
-hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
-
-input, select {vertical-align: middle;}
-
-pre {
-	white-space: pre; /* CSS2 */
-	white-space: pre-wrap; /* CSS 2.1 */
-	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
-	word-wrap: break-word; /* IE */
+@font-face {
+    font-family: 'SquareFont';
+    src: url('../fonts/squarefont/square-webfont.eot');
+    src: url('../fonts/squarefont/square-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/squarefont/square-webfont.woff') format('woff'),
+         url('../fonts/squarefont/square-webfont.ttf') format('truetype'),
+         url('../fonts/squarefont/square-webfont.svg#SquareFontRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
-input[type="radio"] {vertical-align: text-bottom;}
-input[type="checkbox"] {vertical-align: bottom; *vertical-align: baseline;}
-.ie6 input {vertical-align: text-bottom;}
+@font-face {
+    font-family: 'Sound System';
+    src: url('../fonts/sound-system/sound-system-webfont.eot');
+    src: url('../fonts/sound-system/sound-system-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sound-system/sound-system-webfont.woff') format('woff'),
+         url('../fonts/sound-system/sound-system-webfont.ttf') format('truetype'),
+         url('../fonts/sound-system/sound-system-webfont.svg#SoundSystemRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
-select, input, textarea {font: 99% sans-serif;}
-
-table {font-size: inherit; font: 100%;}
- 
-/* Accessible focus treatment
-	people.opera.com/patrickl/experiments/keyboard/test */
-a:hover, a:active {outline: none;}
-
-small {font-size: 85%;}
-
-strong, th {font-weight: bold;}
-
-td, td img {vertical-align: top;} 
-
-/* Make sure sup and sub don't screw with your line-heights
-	gist.github.com/413930 */
-sub, sup {font-size: 75%; line-height: 0; position: relative;}
-sup {top: -0.5em;}
-sub {bottom: -0.25em;}
-
-/* standardize any monospaced elements */
-pre, code, kbd, samp {font-family: monospace, sans-serif;}
-
-/* hand cursor on clickable elements */
-.clickable,
-label, 
-input[type=button], 
-input[type=submit], 
-button {cursor: pointer;}
-
-/* Webkit browsers add a 2px margin outside the chrome of form elements */
-button, input, select, textarea {margin: 0;}
-
-/* make buttons play nice in IE */
-button {width: auto; overflow: visible;}
- 
-/* scale images in IE7 more attractively */
-.ie7 img {-ms-interpolation-mode: bicubic;}
-
-/* prevent BG image flicker upon hover */
-.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
-
-/* let's clear some floats */
-.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
-.clearfix:after { clear: both; }  
-.clearfix { zoom: 1; }  
+@font-face {
+    font-family: 'PT Sans Regular';
+    src: url('../fonts/pt-sans/PTS55F-webfont.eot');
+    src: url('../fonts/pt-sans/PTS55F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pt-sans/PTS55F-webfont.woff') format('woff'),
+         url('../fonts/pt-sans/PTS55F-webfont.ttf') format('truetype'),
+         url('../fonts/pt-sans/PTS55F-webfont.svg#PTSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
+@font-face {
+    font-family: 'PT Sans Bold';
+    src: url('../fonts/pt-sans/PTS75F-webfont.eot');
+    src: url('../fonts/pt-sans/PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pt-sans/PTS75F-webfont.woff') format('woff'),
+         url('../fonts/pt-sans/PTS75F-webfont.ttf') format('truetype'),
+         url('../fonts/pt-sans/PTS75F-webfont.svg#PTSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
-/* Ok, this is where the fun starts.
--------------------------------------------------------------------------------*/
+@font-face {
+    font-family: 'PT Sans Italic';
+    src: url('../fonts/pt-sans/PTS56F-webfont.eot');
+    src: url('../fonts/pt-sans/PTS56F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pt-sans/PTS56F-webfont.woff') format('woff'),
+         url('../fonts/pt-sans/PTS56F-webfont.ttf') format('truetype'),
+         url('../fonts/pt-sans/PTS56F-webfont.svg#PTSansItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
-/* new Linux- and Windows-friendly sans-serif font stack: http://mky.be/fontstack */
-body {font: 13px Helmet, Freesans, sans-serif;}
+/* HTML5 display definitions
+---------------------------------------- */
 
-/* using local fonts? make sure to read up on Paul Irish's 
-	Bulletproof @font-face syntax: http://mky.be/font-face/bulletproof/ */
+* {
+  box-sizing: border-box;
+}
 
-/* we like off-black for text */
-body, select, input, textarea {color: #333;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, dialog {
+	display: block;
+}
 
-a {color: #03f;}
-a:hover {color: #69f;}
+/* Corrects inline-block not defined in IE6/7/8 and FF3 */
+audio, canvas, video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
 
-/* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
-::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
-::selection {background: #fcd700; color: #fff; text-shadow: none;} 
+audio:not([controls]) {
+	display: none;
+}
 
-/*	j.mp/webkit-tap-highlight-color */
-a:link {-webkit-tap-highlight-color: #fcd700;} 
+/* Ensures content is hidden from all presentations, including screenreaders */
+[hidden] {
+	display: none;
+	visibility: hidden;
+}
 
-ins {background-color: #fcd700; color: #000; text-decoration: none;}
-mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
+/* =Base structure
+---------------------------------------- */
+
+html {
+	height: 100%;
+  font-size: 112.5%; /* 18px */
+  /*font-size: 100%;*/
+	overflow-y: scroll; /* Force a scrollbar in non-IE */
+  text-size-adjust: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0 auto;
+}
+
+/* Fonts settings based on the 100E2R standard: http://www.informationarchitects.jp/en/100e2r/ */
+body, button, input, select, textarea {
+	color: #222;
+}
+
+/* Add and/or remove tags as your baseline grid needs */
+p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldset, menu, h4, h5, h6, img, figure, figcaption, button, hr {
+  line-height: 1.3333em; /* 24px */
+  margin: 0 0 1.3333em 0;
+}
+
+/* =HEADINGS/SMALL
+---------------------------------------- */
+
+body {
+  font-family: 'PT Sans Regular', Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+.mega {
+  font-size: 4.1667em; /* 75px */
+  line-height: 1.28em; /* 96px */
+  margin-top: 0.32em;
+  margin-bottom: 0em;
+}
+
+h1, .h1 {
+  font-size: 1.5556em; /* 28px */
+  line-height: 1.7143em; /* 48px */
+  margin-top: 0.8571em;
+  margin-bottom: 0em;
+}
+
+h2, .h2 {
+  font-size: 1.1111em; /* 20px */
+  line-height: 1.2em; /* 24px */
+  margin-top: 1.2em;
+  margin-bottom: 0em;
+}
+
+h3, .h3 {
+  font-size: 1em; /* 18px */
+  line-height: 1.3333em; /* 24px */
+  margin-top: 1.3333em;
+  margin-bottom: 0em;
+
+  font-family: bold;
+}
+
+small, .small {
+  font-size: 0.7778em; /* 14px */
+  line-height: 1.7143em; /* 24px */
+  margin-top: 1.7143em;
+  margin-bottom: 0em;
+}
+
+/* =PREFORMATTED TEXT AND CODE
+---------------------------------------- */
+
+/* Allows line wrapping of 'pre' */
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+pre, code, kbd, samp {
+	font: 1em/1.625em Menlo, Consolas, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
+}
+
+/* =TABLES
+---------------------------------------- */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th {
+	text-align: left;
+}
+
+tr, th, td {
+	padding-right: 1.625em;
+}
+
+/* =FORMS
+---------------------------------------- */
+
+form {
+	margin: 0;
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+
+legend {
+	border: 0;
+	*margin-left: -7px;
+}
+
+button, input, select, textarea {
+	vertical-align: baseline;
+	*vertical-align: middle;
+}
+
+button, input {
+	line-height: normal;
+	*overflow: visible;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	cursor: pointer;
+	-webkit-appearance: button;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	box-sizing: border-box;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+/* Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7 */
+table button, table input {
+	*overflow: auto;
+}
+
+/* =QUOTES
+---------------------------------------- */
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+blockquote, q, cite {
+	font-style: italic;
+}
+
+blockquote {
+	padding-left: 1.625em;
+	border-left: 1px solid #ddd;
+}
+
+blockquote > p {
+	padding: 0;
+}
+
+/* =LISTS
+---------------------------------------- */
+
+ul, ol {
+	list-style-position: inside;
+	padding: 0;
+}
+
+li ul, li ol {
+	margin: 0 1.625em;
+}
+
+dl dd {
+	margin-left: 1.625em;
+}
+
+/* =LINKS
+---------------------------------------- */
+
+a, a:visited {
+	text-decoration: none;
+	color: #06c;
+}
+
+a:hover {
+	border-bottom: 1px solid;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+/* Better CSS outline suppression: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {
+	outline: none;
+}
+
+/* =FIGURES
+---------------------------------------- */
+
+figure {
+	margin: 0;
+}
+
+/* =EMBEDDED CONTENT
+---------------------------------------- */
+
+img, object, video {
+	max-width: 100%; /* Automatically scales images larger than the container. Consider this first: http://unstoppablerobotninja.com/entry/fluid-images/ */
+	/* _width: 100%; /* IE6 doesn't support max-width, so we just use width. If the image is larger than the container, just uncomment this. If it is smaller than the container, uncomment and change the 100% value to an absolute one */
+}
+
+img {
+	border: 0;
+	-ms-interpolation-mode: bicubic; /* Improve IE's resizing of images: css-tricks.com/ie-fix-bicubic-scaling-for-images */
+}
+
+/* Corrects overflow displayed oddly in IE9 */
+svg:not(:root) {
+	overflow: hidden;
+}
+
+/* =ABBREVIATIONS
+---------------------------------------- */
+
+abbr[title], dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+/* =MARKED/INSERTED/DELETED TEXT
+---------------------------------------- */
+
+mark {
+	background: #ff0;
+}
+
+ins {
+	text-decoration: none;
+	background: #ff9;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+/* =OTHERS
+---------------------------------------- */
+
+em, q, cite {
+  font-family: 'PT Sans Italic', Verdana, sans-serif;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-bottom: 1px solid #ddd;
+}
+
+strong, b, dt {
+  font-family: 'PT Sans Bold', Verdana, sans-serif;
+}
+
+dfn {
+	font-style: italic;
+}
+
+var, address {
+	font-style: normal;
+}
+
+/* Position 'sub' and 'sup' without affecting line-height: gist.github.com/413930 */
+sub, sup {
+	font-size: 0.625em;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+/* =HELPER CLASSES
+---------------------------------------- */
+
+.bold {
+  font-family: 'PT Sans Bold', Verdana, sans-serif;
+}
+
+.italic {
+  font-family: 'PT Sans Italic', Verdana, sans-serif;
+}
+
+/*
+	* Micro clearfix hack, more semantically titled with 'group'
+	* Source: nicolasgallagher.com/micro-clearfix-hack/
+*/
+.group:before, .group:after {
+	content: "";
+	display: table;
+}
+
+.group:after {
+	clear: both;
+}
+
+.group {
+	*zoom: 1;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+}
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* =PRIMARY STYLES
+---------------------------------------- */
+
+/* Header and Navigation */
+
+#navigation {
+  font-family: 'Sound System', Verdana, sans-serif;
+  position: absolute;
+
+  margin-left: 10.99%; /* 1 col, 2 gut // 106 / 964 */
+  width: 53.73%; /* 7 col, 6 gut // 518 / 964 */
+}
+
+.navigation-title {
+  /* Mixins: .mega */
+  z-index: 10;
+}
+
+.navigation-list {
+  /* Mixins: .h1, .group */
+  display: inline;
+  font-family: 'SquareFont', 'Sound System', Verdana, sans-serif;
+  line-height: 1em;
+  list-style-type: none;
+  margin-top: 0;
+}
+
+.navigation-list a:hover {
+  border-bottom: none;
+}
+
+.navigation-item {
+  float: left;
+  clear: left;
+  display: inline; /* keep it from expanding the whole way */
+}
+
+/* General Styles for Pages */
+.page-section {
+  min-height: 110%;
+  padding-top: 4.75em;
+  width: 100%;
+  z-index: -1;
+}
+
+.page-section-inner {
+  /* create a new stacking context */
+  position: relative;
+  z-index: 100;
+}
+
+.section-name {
+  /* Mixins: .visually-hidden */
+  border: 0;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+}
+
+
+/* -Home Page */
+
+#page-home {
+  background: #222 url('../img/dark_dotted.png') repeat top left;
+  color: #E5E5E5;
+}
+
+#page-home .page-section-inner {
+  margin-left: 41.5%;
+  width: 45.64%; /* 6 col, 5 gut // 440 / 964 */
+}
+
+#page-home .logo {
+  float: left;
+  margin-top: 11em;
+  margin-left: -70.9%; /* 4 col, 4 gut // 312 / 440 */
+  width: 52.18%; /* 3 col, 3 gut // 234 / 440 */
+}
+
+#page-home .text-section {
+}
+
+.introduction-updates-list {
+  list-style-type: none;
+}
+
+
+/* -Information Page */
+
+#page-info {
+  background: #EEE;
+}
+
+#page-info .page-section-inner {
+  /* Mixins: .group */
+  background-color: white;
+  border: 1px solid #CCC;
+  margin-top: 1.75em;
+  margin-left: 25.51%; /* 3 col, 3.5 gut // 248 /964 */
+  min-height: 75%;
+  width: 61.82%; /* 8 col, 7 gut // 596 / 964 */
+}
+
+#page-info .page-section-inner h1 {
+  margin-top: 0.6571em;
+}
+
+#info-section-selector {
+  background-color: #F5F5F5;
+  -webkit-box-shadow:  4px 1px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow:  4px 1px 10px 0px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  padding-right: 2.35%; /* TODO: Align this */
+  padding-bottom: 5%;
+  position: absolute;
+  text-align: right;
+  width: 23.82%; /* 2 col, 1.5 gut // 142 / 596 */
+}
+
+#page-info .section-selector-items {
+  /* Mixins: .h2 */
+  list-style-type: none;
+  margin-top: -0.125em;
+}
+
+#info-text {
+  float: right;
+  margin-left: 2.35%; /* 0.5 gut // 14 / 596 */
+  width: 73.83%; /* 6 col, 5 gut // 440 / 596 */
+  overflow-y: scroll;
+  padding-right: 2.35%;
+}
+
+/* -Leaders Page */
+
+#page-leaders {
+  background: #F4E900;
+}
+
+#page-leaders .page-section-inner {
+  margin-top: 0.5714em;
+  margin-bottom: 0em;
+  margin-left: 35.37%; /* 4 col, 5 gut // 340 / 964 */
+  width: 53.73%; /* 7 col, 6 gut // 518 / 964 */
+}
+
+.leaders-list {
+  /* Mixins: .class-for-42px */
+  font-family: "SquareFont", "Courier New", monospace;
+  font-size: 2.3333em; /* 42px */
+  line-height: 1.1429em; /* 48px */
+}
+
+.leaders-list li:first-child {
+  /* Mixins: mega */
+  font-size: 1.7857em; /* 75px */
+  line-height: 1.28em; /* 96px */
+  margin-top: 0.32em;
+  margin-bottom: 0em;
+}
+
+/* -Blog Page */
+
+#page-blog {
+  background: #DDD url('../img/project_paper.png') repeat top center;
+}
+
+#page-blog .page-section-inner {
+  /* Mixins: .group */
+  margin-left: 25.51%; /* 3 col, 3.5 gut // 248 /964 */
+  min-height: 75%;
+  width: 61.82%; /* 8 col, 7 gut // 596 / 964 */
+}
+
+#blog-section-selector {
+  float: left;
+  height: 100%;
+  padding-right: 2.35%; /* TODO: Align this */
+  padding-bottom: 5%;
+  text-align: right;
+  width: 23.82%; /* 2 col, 1.5 gut // 142 / 596 */
+}
+
+#page-blog .section-selector-items {
+  /* Mixins: .h2 */
+  list-style-type: none;
+  margin-top: -0.125em;
+}
+
+#blog-text {
+  float: left;
+  margin-left: 2.35%; /* 0.5 gut // 14 / 596 */
+  width: 73.83%; /* 6 col, 5 gut // 440 / 596 */
+  overflow-y: scroll;
+  padding-right: 2.35%;
+}
+
+/* -Calendar Page */
+
+#page-calendar {
+
+}
+
+/* =STATE DEPENDENT STYLES
+---------------------------------------- */
+
+/* Header style changes depending on what page it's in. */
+a.navigation-item {
+  color: black;
+}
+
+.navigation-item.is-active {
+  color: #06c;
+}
+
+.is-home .navigation-title {
+  color: white;
+}
+
+.is-home .navigation-item {
+  color: #06c;
+}
+
+.is-home .navigation-item.is-active {
+  color: white;
+}
+
+.is-info { }
+
+.is-leaders .navigation-item { 
+  color: black;
+}
+
+.is-leaders .is-active {
+  color: white;
+  background-color: black;
+  margin-left: -0.125em;
+  padding: 0 0.125em;
+}
+
+.is-blog { }
+
+.is-calendar { }
 
 
 
-/* And here begins the Wordpress fun.
--------------------------------------------------------------------------------*/
+/* =WORDPRESS STYLES
+--------------------------------------*/
 
 #page-wrap {width: 960px; margin: 20px auto;}
 
@@ -224,29 +778,73 @@ ol.commentlist li.thread-alt {}
 ol.commentlist li.thread-even {}
 ol.commentlist li.thread-odd {}
 
+/* =MEDIA QUERIES
+---------------------------------------- */
 
-/* Print styles!
--------------------------------------------------------------------------------*/
+/* The media queries included in here are only placeholder. Modify them as your content requires */
+
+@media only screen and (min-width: 481px) {
+	/* Wide mobile (480px+) styles go here */
+}
+
+@media only screen and (min-width: 768px) { 
+	/* Tablets/netbooks (768px+) styles go here */
+}
+
+@media only screen and (min-width: 1024px) { 
+	/* Desktops (1024px+) styles go here */
+}
+
+/* PRINT STYLES
+---------------------------------------- */
+
+/* Print styles inlined to avoid extra HTTP connection */
+
 @media print {
+	* {
+		background: transparent !important;
+		color: black !important; /* Black prints faster: sanbeiji.com/archives/953 */
+		text-shadow: none !important;
+		filter: none !important;
+		-ms-filter: none !important;
+	}
 
+	a, a:visited {
+		text-decoration: underline;
+	}
 
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
 
-}
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
 
+	/* Do not show javascript and internal links */
+	a[href^="javascript:"]:after, a[href^="#"]:after {
+		content: ""; 
+	}
 
-/* Media queries!
--------------------------------------------------------------------------------*/
+	/* Printing Tables: css-discuss.incutio.com/wiki/Printing_Tables */
+	thead {
+		display: table-header-group;
+	}
 
-/* Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
-@media screen and (max-device-width: 480px) {
-	
-		
-}
+	tr, img {
+		page-break-inside: avoid;
+	}
 
-@media all and (orientation: portrait) {
-	
-}
+	@page {
+		margin: 0.5cm;
+	}
 
-@media all and (orientation: landscape) {
-	
+	p, h2, h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2, h3 {
+		page-break-after: avoid;
+	}
 }
