@@ -500,6 +500,15 @@ sub {
 }
 
 /* General Styles for Pages */
+/*
+<section class="page-section" id="page-PAGENAME">
+  <h1 class="section-name">TITLE</h1>
+  <div class="page-section-inner group">
+
+  </div>
+</section>
+*/
+
 .page-section {
   min-height: 110%;
   padding-top: 4.75em;
