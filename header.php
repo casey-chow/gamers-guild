@@ -78,9 +78,13 @@
 	
 </head>
 
-<?php if( function_exists( 'ninja_pages_display_terms' ) ) {
-  $categories = mb_strtolower(strip_tags(ninja_pages_display_terms( 'category', ',' )));
-} ?>
+<?php 
+  $categories_arr = get_the_category();
+  $categories = "";
+  foreach ($categories_arr as $category) {
+    $categories .= $category->slug . ' ';
+  }
+?>
 <body <?php body_class($categories); ?>>
 	
 		<header id="header">
