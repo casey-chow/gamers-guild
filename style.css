@@ -600,7 +600,7 @@ sub {
   margin-top: -0.125em;
 }
 
-#info-text {
+#page-info .text-article {
   float: right;
   margin-left: 2.35%; /* 0.5 gut // 14 / 596 */
   width: 73.83%; /* 6 col, 5 gut // 440 / 596 */
