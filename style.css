@@ -1,10 +1,9 @@
 /*   
-Theme Name: The HTML5 Reset Theme
-Theme URI: http://html5reset.org
-Description: A style-free theme to get you started on an HTML5-based Wordpress theme of your own.
-Author: Monkey Do!
-Author URI: http://monkeydo.biz
-Version: 1
+Theme Name: Gamers Guild Theme
+Description: A custom theme for the Montgomery Gamers Guild.
+Author: Project Pancakes
+Author URI: http://projectpancakes.org/
+Version: 0.1
 */
 
 /* =@font-face Declarations
@@ -468,7 +467,7 @@ sub {
 
 /* Header and Navigation */
 
-#navigation {
+#header {
   font-family: 'Sound System', Verdana, sans-serif;
   position: absolute;
 
@@ -476,13 +475,13 @@ sub {
   width: 53.73%; /* 7 col, 6 gut // 518 / 964 */
 }
 
-.navigation-title {
+.header-title {
   /* Mixins: .mega */
   z-index: 10;
 }
 
-.navigation-list {
-  /* Mixins: .h1, .group */
+.navigation-menu {
+  /* Mixins: .h1 */
   display: inline;
   font-family: 'SquareFont', 'Sound System', Verdana, sans-serif;
   line-height: 1em;
@@ -490,11 +489,11 @@ sub {
   margin-top: 0;
 }
 
-.navigation-list a:hover {
+.navigation-menu a:hover {
   border-bottom: none;
 }
 
-.navigation-item {
+.menu-item-link {
   float: left;
   clear: left;
   display: inline; /* keep it from expanding the whole way */
@@ -530,7 +529,7 @@ sub {
 /* -Home Page */
 
 #page-home {
-  background: #222 url('../img/dark_dotted.png') repeat top left;
+  background: #222 url('_/img/dark_dotted.png') repeat top left;
   color: #E5E5E5;
 }
 
@@ -630,8 +629,10 @@ sub {
 
 /* -Blog Page */
 
-#page-blog {
-  background: #DDD url('../img/project_paper.png') repeat top center;
+#page-blog,
+.blog,
+.single-post {
+  background: #DDD url('_/img/project_paper.png') repeat top center;
 }
 
 #page-blog .page-section-inner {

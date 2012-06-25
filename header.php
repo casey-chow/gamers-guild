@@ -53,8 +53,8 @@
 	<meta name="google-site-verification" content="">
 	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
 	
-	<meta name="author" content="Your Name Here">
-	<meta name="Copyright" content="Copyright Your Name Here 2011. All Rights Reserved.">
+	<meta name="author" content="Montgomery Gamers Guild">
+	<meta name="Copyright" content="Copyright Montgomery Gamers Guild 2012. All Rights Reserved.">
 	
 	<!--  Mobile Viewport meta tag
 	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
