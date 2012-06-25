@@ -1,26 +1,15 @@
 <?php
-        // Translations can be filed in the /languages/ directory
-        load_theme_textdomain( 'html5reset', TEMPLATEPATH . '/languages' );
- 
-        $locale = get_locale();
-        $locale_file = TEMPLATEPATH . "/languages/$locale.php";
-        if ( is_readable($locale_file) )
-            require_once($locale_file);
-	
-	// Add RSS links to <head> section
-	automatic_feed_links();
-	
+  require_once('_/inc/headjs-loader.php');
+
 	// Load jQuery
-	if ( !function_exists(core_mods) ) {
-		function core_mods() {
-			if ( !is_admin() ) {
-				wp_deregister_script('jquery');
-				wp_register_script('jquery', ("//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"), false);
-				wp_enqueue_script('jquery');
-			}
-		}
-		core_mods();
-	}
+  function loadjQuery() {
+      if ( !is_admin() ) {
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.7.4/jquery.min.js"), false);
+        wp_enqueue_script('jquery');
+      }
+    }
+    add_action('wp_enqueue_scripts', 'loadjQuery');
 
 	// Clean up the <head>
 	function removeHeadLinks() {
