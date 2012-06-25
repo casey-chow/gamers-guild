@@ -78,7 +78,10 @@
 	
 </head>
 
-<body <?php body_class(); ?>>
+<?php if( function_exists( 'ninja_pages_display_terms' ) ) {
+  $categories = mb_strtolower(strip_tags(ninja_pages_display_terms( 'category', ',' )));
+} ?>
+<body <?php body_class($categories); ?>>
 	
 		<header id="header">
       <h1 class="header-title mega"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
