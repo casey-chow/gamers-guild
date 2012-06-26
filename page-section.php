@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: With Section Selector
+Template Name: Section
 */
 ?>
 
