@@ -114,9 +114,26 @@
       echo get_post($page_id)->post_name;
     }
 
+  function get_parent_ID() {
+      global $wp_query;
+
+      if( empty($wp_query->post->post_parent) ) {
+        return $wp_query->post->ID;
+      } else {
+        return $wp_query->post->post_parent;
+      }
+    }
+
+  function get_section_title() {
+      $parent = get_parent_ID();
+      return get_the_title($parent);
+    }
+
   function list_child_pages($classnames) {
+      $parent = get_parent_ID();
       $output= '';
-      $children = wp_list_pages("title_li=&child_of=".get_the_ID()."&depth=1&echo=0");
+      $children = wp_list_pages("title_li=&child_of=$parent&depth=1&echo=0");
+
       if ($children) {
         $output .= "<ul class=\"$classnames\">\n";
         $output .= $children;

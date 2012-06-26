@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Parent
+Template Name: With Section Selector
 */
 ?>
 
@@ -10,7 +10,7 @@ Template Name: Parent
   <section class="page-section page-<?php the_slug(); ?>">
     <div class="page-section-inner group">
       <nav class="section-selector">
-        <h1><?php the_title(); ?></h1>
+        <h1><?php echo get_section_title(); ?></h1>
         <?php //TODO: AJAX page loading ?>
         <?php list_child_pages('section-selector-items h2'); ?>
       </nav>
