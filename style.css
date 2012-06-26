@@ -689,8 +689,37 @@ sub {
 
 /* -Calendar Page */
 
-.page-calendar {
+.page-calendar .page-section-inner {
+  padding-top: 2em;
+  margin-left: 25.51%; /* 3 col, 3.5 gut // 248 /964 */
+  width: 61.82%; /* 8 col, 7 gut // 596 / 964 */
+}
 
+/* -404 Page */
+.error404 .header-title a {
+  color: #B80000;
+}
+
+.error404 .menu-item-link {
+  color: #880000;
+}
+
+.error404 .page-section {
+  background: #000;
+  color: #D0D0D0;
+}
+
+.error404 .text-article {
+  padding: 3em;
+  text-align: center;
+}
+.error404 .page-section-inner {
+  /* Mixins: .centered */
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 75%;
+  width: 61.82%; /* 8 col, 7 gut // 596 / 964 */
 }
 
 /* =STATE DEPENDENT STYLES
