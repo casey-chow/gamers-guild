@@ -424,6 +424,12 @@ sub {
   font-family: 'PT Sans Italic', Verdana, sans-serif;
 }
 
+.centered {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*
 	* Micro clearfix hack, more semantically titled with 'group'
 	* Source: nicolasgallagher.com/micro-clearfix-hack/
