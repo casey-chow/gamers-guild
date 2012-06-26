@@ -511,7 +511,7 @@ sub {
 
 .page-section {
   min-height: 110%;
-  padding-top: 4.75em;
+  padding: 4.75em 0;
   width: 100%;
   z-index: -1;
 }
@@ -572,6 +572,7 @@ sub {
   /* Mixins: .group */
   background-color: white;
   border: 1px solid #CCC;
+  display: table;
   margin-top: 1.75em;
   margin-left: 25.51%; /* 3 col, 3.5 gut // 248 /964 */
   min-height: 75%;
@@ -582,16 +583,18 @@ sub {
   margin-top: 0.6571em;
 }
 
-#info-section-selector {
+#page-info .section-selector {
   background-color: #F5F5F5;
-  -webkit-box-shadow:  4px 1px 10px 0px rgba(0, 0, 0, 0.3);
   box-shadow:  4px 1px 10px 0px rgba(0, 0, 0, 0.3);
+  display: table-cell;
   height: 100%;
-  padding-right: 2.35%; /* TODO: Align this */
+  padding-right: 2.35%; 
   padding-bottom: 5%;
+  padding-left: 2.35%;
   position: absolute;
   text-align: right;
   width: 23.82%; /* 2 col, 1.5 gut // 142 / 596 */
+  word-wrap: break-word;
 }
 
 #page-info .section-selector-items {
@@ -601,10 +604,12 @@ sub {
 }
 
 #page-info .text-article {
+  display: table-cell;
   float: right;
   margin-left: 2.35%; /* 0.5 gut // 14 / 596 */
   width: 73.83%; /* 6 col, 5 gut // 440 / 596 */
   overflow-y: scroll;
+  padding-top: 1.95em;
   padding-right: 2.35%;
 }
 

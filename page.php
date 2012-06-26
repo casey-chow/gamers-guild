@@ -15,7 +15,6 @@
     </div>
   </section>
 
-  <?php comments_template(); ?>
   <?php endwhile; endif; ?>
 
 <?php get_sidebar(); ?>

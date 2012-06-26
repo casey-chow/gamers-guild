@@ -115,7 +115,7 @@
 
   function list_child_pages($classnames) {
       $output= '';
-      $children = wp_list_pages("title_li=&child_of=".get_the_ID()."&echo=0");
+      $children = wp_list_pages("title_li=&child_of=".get_the_ID()."&depth=1&echo=0");
       if ($children) {
         $output .= "<ul class=\"$classnames\">\n";
         $output .= $children;
