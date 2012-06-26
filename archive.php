@@ -1,56 +1,54 @@
 <?php get_header(); ?>
+  <section class="page-section">
+    <div class="page-section-inner group">
+      <nav class="section-selector blog-archives">
+        <h1>Blog</h1>
+        <?php list_archives('section-selector-items'); ?>
+      </nav>
+      <div class="text-article">
+        <?php if (have_posts()) : ?>
+          <h2>
+            <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
+            <?php if (is_category()) { ?>
+              Archive for the &#8216;<?php single_cat_title(); ?>&#8217; Category
+            <?php } elseif( is_tag() ) { ?>
+              Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;
+            <?php } elseif (is_day()) { ?>
+              Archive for <?php the_time('F jS, Y'); ?>
+            <?php } elseif (is_month()) { ?>
+              Archive for <?php the_time('F, Y'); ?>
+            <?php } elseif (is_year()) { ?>
+              Archive for <?php the_time('Y'); ?>
+            <?php } elseif (is_author()) { ?>
+              Author Archive
+            <?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+              Blog Archives
+            <?php } ?>
+          </h2>
 
-		<?php if (have_posts()) : ?>
+          <?php include (TEMPLATEPATH . '/_/inc/nav.php' ); ?>
 
- 			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
+          <?php while (have_posts()) : the_post(); ?>
+            <article <?php post_class() ?>>
+            
+                <h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+              
+                <?php include (TEMPLATEPATH . '/_/inc/meta.php' ); ?>
 
-			<?php /* If this is a category archive */ if (is_category()) { ?>
-				<h2>Archive for the &#8216;<?php single_cat_title(); ?>&#8217; Category</h2>
+                <div class="entry">
+                  <?php the_content(); ?>
+                </div>
 
-			<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-				<h2>Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h2>
+            </article>
 
-			<?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-				<h2>Archive for <?php the_time('F jS, Y'); ?></h2>
+          <?php endwhile; ?>
 
-			<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-				<h2>Archive for <?php the_time('F, Y'); ?></h2>
+          <?php include (TEMPLATEPATH . '/_/inc/nav.php' ); ?>
+          
+      <?php else : ?>
 
-			<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-				<h2 class="pagetitle">Archive for <?php the_time('Y'); ?></h2>
+        <h2>Nothing found</h2>
 
-			<?php /* If this is an author archive */ } elseif (is_author()) { ?>
-				<h2 class="pagetitle">Author Archive</h2>
-
-			<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-				<h2 class="pagetitle">Blog Archives</h2>
-			
-			<?php } ?>
-
-			<?php include (TEMPLATEPATH . '/_/inc/nav.php' ); ?>
-
-			<?php while (have_posts()) : the_post(); ?>
-			
-				<article <?php post_class() ?>>
-				
-						<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-					
-						<?php include (TEMPLATEPATH . '/_/inc/meta.php' ); ?>
-
-						<div class="entry">
-							<?php the_content(); ?>
-						</div>
-
-				</article>
-
-			<?php endwhile; ?>
-
-			<?php include (TEMPLATEPATH . '/_/inc/nav.php' ); ?>
-			
-	<?php else : ?>
-
-		<h2>Nothing found</h2>
-
-	<?php endif; ?>
+      <?php endif; ?>
 
 <?php get_footer(); ?>

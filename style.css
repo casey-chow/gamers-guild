@@ -626,14 +626,14 @@ sub {
   width: 53.73%; /* 7 col, 6 gut // 518 / 964 */
 }
 
-.leaders-list {
+.page-leaders ol {
   /* Mixins: .class-for-42px */
   font-family: "SquareFont", "Courier New", monospace;
   font-size: 2.3333em; /* 42px */
   line-height: 1.1429em; /* 48px */
 }
 
-.leaders-list li:first-child {
+.page-leaders ol li:first-child {
   /* Mixins: mega */
   font-size: 1.7857em; /* 75px */
   line-height: 1.28em; /* 96px */
@@ -651,12 +651,14 @@ sub {
 
 .page-blog .page-section-inner {
   /* Mixins: .group */
+  display: table;
+  margin-top: 1.75em;
   margin-left: 25.51%; /* 3 col, 3.5 gut // 248 /964 */
   min-height: 75%;
   width: 61.82%; /* 8 col, 7 gut // 596 / 964 */
 }
 
-#blog-section-selector {
+.page-blog .section-selector {
   float: left;
   height: 100%;
   padding-right: 2.35%; /* TODO: Align this */
@@ -671,7 +673,7 @@ sub {
   margin-top: -0.125em;
 }
 
-#blog-text {
+.page-blog .text-article {
   float: left;
   margin-left: 2.35%; /* 0.5 gut // 14 / 596 */
   width: 73.83%; /* 6 col, 5 gut // 440 / 596 */

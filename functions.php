@@ -142,6 +142,14 @@
       echo $output;
     }
 
+  function list_archives($classnames) {
+      echo "<ul class=\"$classnames\">";
+      wp_get_archives(array(
+        'limit' => 12
+      ));
+      echo "</ul>";
+    }
+
   function sendUaCompatible() {
       // https://github.com/h5bp/html5-boilerplate/issues/378
       header("X-UA-Compatible: IE=edge,chrome=1");

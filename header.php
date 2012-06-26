@@ -84,6 +84,9 @@
   foreach ($categories_arr as $category) {
     $categories .= $category->slug . ' ';
   }
+  if ( (is_home() && !is_front_page()) || is_single() || is_archive() ) {
+    $categories .= 'page-blog ';
+  }
 ?>
 <body <?php body_class($categories); ?>>
 	
