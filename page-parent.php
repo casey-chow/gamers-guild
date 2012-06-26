@@ -7,7 +7,7 @@ Template Name: Parent
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-  <section class="page-section" id="page-<?php the_slug(); ?>">
+  <section class="page-section page-<?php the_slug(); ?>">
     <div class="page-section-inner group">
       <nav class="section-selector">
         <h1><?php the_title(); ?></h1>

@@ -537,24 +537,24 @@ sub {
 
 /* -Home Page */
 
-#page-home {
+.page-home {
   background: #222 url('_/img/dark_dotted.png') repeat top left;
   color: #E5E5E5;
 }
 
-#page-home .page-section-inner {
+.page-home .page-section-inner {
   margin-left: 41.5%;
   width: 45.64%; /* 6 col, 5 gut // 440 / 964 */
 }
 
-#page-home .logo {
+.page-home .logo {
   float: left;
   margin-top: 11em;
   margin-left: -70.9%; /* 4 col, 4 gut // 312 / 440 */
   width: 52.18%; /* 3 col, 3 gut // 234 / 440 */
 }
 
-#page-home .text-section {
+.page-home .text-section {
 }
 
 .introduction-updates-list {
@@ -564,11 +564,11 @@ sub {
 
 /* -Information Page */
 
-#page-info {
+.page-info {
   background: #EEE;
 }
 
-#page-info .page-section-inner {
+.page-info .page-section-inner {
   /* Mixins: .group */
   background-color: white;
   border: 1px solid #CCC;
@@ -579,11 +579,11 @@ sub {
   width: 61.82%; /* 8 col, 7 gut // 596 / 964 */
 }
 
-#page-info .page-section-inner h1 {
+.page-info .page-section-inner h1 {
   margin-top: 0.6571em;
 }
 
-#page-info .section-selector {
+.page-info .section-selector {
   background-color: #F5F5F5;
   box-shadow:  4px 1px 10px 0px rgba(0, 0, 0, 0.3);
   display: table-cell;
@@ -597,13 +597,13 @@ sub {
   word-wrap: break-word;
 }
 
-#page-info .section-selector-items {
+.page-info .section-selector-items {
   /* Mixins: .h2 */
   list-style-type: none;
   margin-top: -0.125em;
 }
 
-#page-info .text-article {
+.page-info .text-article {
   display: table-cell;
   float: right;
   margin-left: 2.35%; /* 0.5 gut // 14 / 596 */
@@ -615,11 +615,11 @@ sub {
 
 /* -Leaders Page */
 
-#page-leaders {
+.page-leaders {
   background: #F4E900;
 }
 
-#page-leaders .page-section-inner {
+.page-leaders .page-section-inner {
   margin-top: 0.5714em;
   margin-bottom: 0em;
   margin-left: 35.37%; /* 4 col, 5 gut // 340 / 964 */
@@ -643,13 +643,13 @@ sub {
 
 /* -Blog Page */
 
-#page-blog,
+.page-blog,
 .blog,
 .single-post {
   background: #DDD url('_/img/project_paper.png') repeat top center;
 }
 
-#page-blog .page-section-inner {
+.page-blog .page-section-inner {
   /* Mixins: .group */
   margin-left: 25.51%; /* 3 col, 3.5 gut // 248 /964 */
   min-height: 75%;
@@ -665,7 +665,7 @@ sub {
   width: 23.82%; /* 2 col, 1.5 gut // 142 / 596 */
 }
 
-#page-blog .section-selector-items {
+.page-blog .section-selector-items {
   /* Mixins: .h2 */
   list-style-type: none;
   margin-top: -0.125em;
@@ -681,7 +681,7 @@ sub {
 
 /* -Calendar Page */
 
-#page-calendar {
+.page-calendar {
 
 }
 
