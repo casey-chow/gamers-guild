@@ -87,11 +87,14 @@
   if ( (is_home() && !is_front_page()) || is_single() || is_archive() ) {
     $categories .= 'page-blog ';
   }
+  if (is_front_page()) {
+    $categories .= 'page-home ';
+  }
 ?>
 <body <?php body_class($categories); ?>>
 	
 		<header id="header">
-      <h1 class="header-title mega"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+      <h1 class="mega"><a href="<?php echo get_option('home'); ?>/" class="header-title"><?php bloginfo('name'); ?></a></h1>
 
       <?php main_nav() ?>
     </header>

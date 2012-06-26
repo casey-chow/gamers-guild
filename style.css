@@ -696,7 +696,7 @@ sub {
 }
 
 /* -404 Page */
-.error404 .header-title a {
+.error404 .header-title {
   color: #B80000;
 }
 
@@ -730,38 +730,39 @@ a.menu-item-link {
   color: black;
 }
 
-.menu-item-link.is-active {
+.current-menu-item .menu-item-link {
   color: #06c;
 }
 
-.is-home .header-title {
+.page-home .header-title {
   color: white;
 }
 
-.is-home .menu-item-link {
+.page-home .menu-item-link {
   color: #06c;
 }
 
-.is-home .menu-item-link.is-active {
+.page-home .current-menu-item .menu-item-link {
   color: white;
 }
 
-.is-info { }
+.page-info { }
 
-.is-leaders .menu-item-link { 
+.page-leaders .header-title,
+.page-leaders .menu-item-link { 
   color: black;
 }
 
-.is-leaders .is-active {
-  color: white;
+.page-leaders .current-menu-item .menu-item-link { 
   background-color: black;
+  color: white;
   margin-left: -0.125em;
   padding: 0 0.125em;
 }
 
-.is-blog { }
+.page-blog { }
 
-.is-calendar { }
+.page-calendar { }
 
 
 
