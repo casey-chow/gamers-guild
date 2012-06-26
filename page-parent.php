@@ -12,7 +12,7 @@ Template Name: Parent
       <nav class="section-selector" id="info-section-selector">
         <h1>Info</h1>
         <?php //TODO: AJAX page loading ?>
-        <?php get_child_pages('section-selector-items h2'); ?>
+        <?php list_child_pages('section-selector-items h2'); ?>
       </nav>
       <article class="text-article" id="post-<?php the_ID(); ?>">
         <h2><?php the_title(); ?></h2>

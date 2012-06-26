@@ -113,7 +113,7 @@
       echo get_post($page_id)->post_name;
     }
 
-  function get_child_pages($classnames) {
+  function list_child_pages($classnames) {
       $output= '';
       $children = wp_list_pages("title_li=&child_of=".get_the_ID()."&echo=0");
       if ($children) {
