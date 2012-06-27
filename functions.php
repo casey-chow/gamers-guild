@@ -82,55 +82,28 @@
     }
   }
 
-  function home_pages() {
-      $page_ids = wp_nav_menu(array(
-        'menu'            => 'main_nav',
-        'theme_location'  => 'main_nav',
-        'depth'           => 1,
-        'container'       => false,
-        'items_wrap'      => '%3$s',
-        'walker'          => new home_page_walker,
-        'echo'            => false
-      ));
-
-      $page_ids = explode(',', $page_ids);
-
-      foreach ($page_ids as $page_id):
-      if(function_exists('iinclude_page')):
-        $title = get_the_title($page_id);
-        ?>
-        <section class="page-section" id="page-<?php the_slug($page_id); ?>">
-          <h1 class="section-name"><?php echo $title; ?></h1>
-          <div class="page-section-inner group">
-            <?php iinclude_page($page_id); ?>
-          </div>
-        </section>
-        <?php
-      endif;
-      endforeach;
-    }
-
   function the_slug ($page_id) {
       echo get_post($page_id)->post_name;
     }
 
-  function get_parent_ID() {
+  function get_parent_ID($post = NULL) {
       global $wp_query;
+      $post = is_null($post) ? $wp_query->post : get_post($post);
 
-      if( empty($wp_query->post->post_parent) ) {
-        return $wp_query->post->ID;
+      if( empty($post->post_parent) ) {
+        return $post->ID;
       } else {
-        return $wp_query->post->post_parent;
+        return $post->post_parent;
       }
     }
 
-  function get_section_title() {
-      $parent = get_parent_ID();
+  function get_section_title($page_id = NULL) {
+      $parent = get_parent_ID($page_id);
       return get_the_title($parent);
     }
 
-  function list_child_pages($classnames) {
-      $parent = get_parent_ID();
+  function list_child_pages($classnames = '', $page_id = NULL) {
+      $parent = get_parent_ID($page_id);
       $output= '';
       $children = wp_list_pages("title_li=&child_of=$parent&depth=1&echo=0");
 

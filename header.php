@@ -79,19 +79,20 @@
 </head>
 
 <?php 
-  $categories_arr = get_the_category();
-  $categories = "";
-  foreach ($categories_arr as $category) {
-    $categories .= $category->slug . ' ';
-  }
+  // Assume only one category
   if ( (is_home() && !is_front_page()) || is_single() || is_archive() ) {
-    $categories .= 'page-blog ';
-  }
-  if (is_front_page()) {
-    $categories .= 'page-home ';
+    $category = 'page-blog ';
+  } else if (is_front_page()) {
+    $category = 'page-home ';
+  } else if (is_page()) {
+    $categories = get_the_category();
+    $category = '';
+    foreach ($categories as $category) {
+      $category .= $category->slug . ' ';
+    }
   }
 ?>
-<body <?php body_class($categories); ?>>
+<body <?php body_class($category); ?>>
 	
 		<header id="header">
       <h1 class="mega"><a href="<?php echo get_option('home'); ?>/" class="header-title"><?php bloginfo('name'); ?></a></h1>
