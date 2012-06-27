@@ -156,4 +156,22 @@
     }
     add_action('send_headers', 'sendUaCompatible');
 
+
+  function load_blog_posts($params) {
+      $my_query = new WP_Query($params);
+      if ($my_query->have_posts()): while ($my_query->have_posts()) : 
+        $my_query->the_post();
+      ?>
+        <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+          <h2><?php the_title(); ?></h2>
+          <?php include (TEMPLATEPATH . '/_/inc/meta.php' ); ?>
+          <div class="entry">
+            <?php the_excerpt(); ?>
+          </div>
+            <a href="<?php the_permalink(); ?>" class="follow-through">Read more</a>
+        </article>
+      <?php
+      endwhile; endif;
+      wp_reset_query();
+    }
 ?>
