@@ -83,7 +83,7 @@
   if ( (is_home() && !is_front_page()) || is_single() || is_archive() ) {
     $category = 'page-blog ';
   } else if (is_front_page()) {
-    $category = 'page-home ';
+    $category = ''; // adding .page-home overrides all the default text styles
   } else if (is_page()) {
     $categories = get_the_category();
     $category = '';
