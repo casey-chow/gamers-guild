@@ -594,12 +594,11 @@ sub {
 .page-info .section-selector {
   background-color: #F5F5F5;
   box-shadow:  4px 1px 10px 0px rgba(0, 0, 0, 0.3);
-  display: table-cell;
+  float: left;
   height: 100%;
   padding-right: 2.35%; 
   padding-bottom: 5%;
   padding-left: 2.35%;
-  position: absolute;
   text-align: right;
   width: 23.82%; /* 2 col, 1.5 gut // 142 / 596 */
   word-wrap: break-word;
