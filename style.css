@@ -487,6 +487,10 @@ sub {
   z-index: 10;
 }
 
+.header-title:hover {
+  border-bottom: none;
+}
+
 .navigation-menu {
   /* Mixins: .h1 */
   display: inline;

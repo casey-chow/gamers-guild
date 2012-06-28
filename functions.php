@@ -7,24 +7,35 @@
       if ( !is_admin() ) {
         wp_deregister_script('jquery');
         wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"), false);
-        wp_enqueue_script('jquery');
+        //wp_enqueue_script('jquery'); //uncomment to load jQuery always
       }
     }
     add_action('wp_enqueue_scripts', 'load_jquery');
 
   function load_home_scripts() {
-      wp_enqueue_script(
-        'waypoints',
-        get_template_directory_uri() . '/_/js/waypoints.js',
-        array('jquery')
-      );
-      wp_enqueue_script(
-        'pages_js', 
-        get_template_directory_uri() . '/_/js/pages.js',
-        array('jquery', 'waypoints')
-      );
+      if (is_front_page()) {
+        wp_enqueue_script(
+          'waypoints',
+          get_template_directory_uri() . '/_/js/waypoints.js',
+          array('jquery')
+        );
+        wp_enqueue_script(
+          'pages_js', 
+          get_template_directory_uri() . '/_/js/pages.js',
+          array('jquery', 'waypoints')
+        );
+      }
     }
     add_action('wp_enqueue_scripts', 'load_home_scripts');
+
+  function load_app_scripts() {
+      wp_enqueue_script(
+        'app_js',
+        get_template_directory_uri() . '/_/js/app.js',
+        array('jquery')
+      );
+    }
+    add_action('wp_enqueue_scripts', 'load_app_scripts');
 
 	// Clean up the <head>
 	function removeHeadLinks() {
