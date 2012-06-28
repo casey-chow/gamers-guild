@@ -474,6 +474,7 @@ sub {
 /* Header and Navigation */
 
 #header {
+  background: none;
   font-family: 'Sound System', Verdana, sans-serif;
   position: absolute;
 

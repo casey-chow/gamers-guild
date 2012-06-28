@@ -1,4 +1,29 @@
 $(function() {
+  // As a hackish fix to changing all the ids into classes
+  $('.page-section').each(function() {
+    var $this = $(this);
+    var classes = $this.attr('class').split(' ');
+    for (var i = 0; i < classes.length; i += 1) {
+      if (classes[i] !== 'page-section' 
+         && classes[i].indexOf('page-') !== -1) {
+        $this.attr('id', classes[i]);
+      }
+    }
+  });
+
+  $('.menu-item-link').click(function(evt) {
+    var $this = $(this);
+    var $src = $(evt.target);
+    var url = $src.attr('href');
+    var tokens = url.split('/'); 
+    var target = tokens[tokens.length - 2];
+
+    target = target == 'wordpress' ? 'home' : target;
+    location.replace('#page-' + target);
+    return false;
+  });
+
+  // Another hackish fix to latch onto the navigation items
 
   /* Function Definitions
    * ----------------------------------------------- */
@@ -13,20 +38,20 @@ $(function() {
   }
 
   function move_navigation($page) {
-    var $nav = $('#navigation');
+    var $nav = $('#header');
     var yoffset = $page.offset().top;
     var _page_name = page_name($page);
 
     $nav
       .removeClass() // remove all classes
-      .addClass('is-' + _page_name)
+      .addClass('page-' + _page_name)
       .animate({ top: yoffset }, 200) // pull the nav down
-      // put the is-active class on the right thing
-      .find('a.is-active')
-        .removeClass('is-active')
+      .find('.current-menu-item')
+        .removeClass('current-menu-item')
         .end()
-      .find('[href=#page-' + _page_name + ']')
-        .addClass('is-active')
+      .find('[href$="' + _page_name + '/"]')
+        .parent()
+        .addClass('current-menu-item')
         .end()
 
     if (window.history.pushState) {
@@ -42,6 +67,17 @@ $(function() {
   }
 
   $.waypoints.settings.scrollThrottle = 15;
+
+  /* Changing Hash on Scroll
+   * ------------------------------------------- */
+
+  // If there's no hash, assume it should be at home
+  if (!location.hash && $(window).scrollTop() === 0) { 
+    $('#header').addClass('page-home'); 
+  } else {
+    move_navigation($(location.hash));
+    scroll_to($(location.hash));
+  }
 
 
   /* Moving the Navigation Between Pages
@@ -107,10 +143,4 @@ $(function() {
     scroll_to($target);
   });
 
-  /* Changing Hash on Scroll
-   * ------------------------------------------- */
-
-  // If there's no hash, assume it should be at home
-  if (!location.hash && $(window).scrollTop() === 0) { $('#navigation').addClass('is-home'); }
-  else { move_navigation($(location.hash)); }
 });

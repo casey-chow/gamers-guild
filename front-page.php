@@ -23,12 +23,21 @@
         <section class="page-section page-<?php the_slug($page_id); ?>">
           <h1 class="section-name"><?php echo $title; ?></h1>
           <div class="page-section-inner group">
-            <?php $template = get_post_meta($page_id, '_wp_page_template', true);
-            if ($template == 'page-section.php'): ?>
+          <?php 
+            $template = get_post_meta($page_id, '_wp_page_template', true);
+            if (in_category('Blog', $page_id)):
+          ?>
+              <nav class="section-selector">
+                <h1><?php echo get_section_title($page_id); ?></h1>
+                <?php list_archives('section-selector-items'); ?>
+              </nav>
+          <?php
+            elseif ($template == 'page-section.php'): 
+          ?>
               <nav class="section-selector">
                 <h1><?php echo get_section_title($page_id); ?></h1>
                 <?php //TODO: AJAX page loading ?>
-                <?php list_archives('section-selector-items'); ?>
+                <?php list_child_pages('section-selector-items', $page_id); ?>
               </nav>
             <?php endif; ?>
             <article class="text-article" id="post-<?php echo $page_id ?>">

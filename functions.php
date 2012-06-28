@@ -3,14 +3,28 @@
   require_once('_/inc/headjs-loader.php');
 
 	// Load jQuery
-  function loadjQuery() {
+  function load_jquery() {
       if ( !is_admin() ) {
         wp_deregister_script('jquery');
-        wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.7.4/jquery.min.js"), false);
+        wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"), false);
         wp_enqueue_script('jquery');
       }
     }
-    add_action('wp_enqueue_scripts', 'loadjQuery');
+    add_action('wp_enqueue_scripts', 'load_jquery');
+
+  function load_home_scripts() {
+      wp_enqueue_script(
+        'waypoints',
+        get_template_directory_uri() . '/_/js/waypoints.js',
+        array('jquery')
+      );
+      wp_enqueue_script(
+        'pages_js', 
+        get_template_directory_uri() . '/_/js/pages.js',
+        array('jquery', 'waypoints')
+      );
+    }
+    add_action('wp_enqueue_scripts', 'load_home_scripts');
 
 	// Clean up the <head>
 	function removeHeadLinks() {
