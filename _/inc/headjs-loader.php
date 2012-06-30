@@ -75,7 +75,7 @@ class headJS_loader {
 		}
 	
 		/* Sort out the Head JS */
-		$headJS = '<script src="//cdnjs.cloudflare.com/ajax/libs/headjs/0.96/head.min.js"></script>';
+		$headJS = '<script src="' . get_template_directory_uri() . '/_/js/head.js"></script>';
 		
 		if (!empty($script_array)) {
 			$script_array = array_unique($script_array);

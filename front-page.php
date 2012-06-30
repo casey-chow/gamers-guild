@@ -18,7 +18,6 @@
       if (function_exists('iinclude_page')):
         $title = get_the_title($page_id);
         // TODO: Check if page is blog page and load blog posts
-        // TODO: Check if page is info page and load template
         ?>
         <section class="page-section page-<?php the_slug($page_id); ?>">
           <h1 class="section-name"><?php echo $title; ?></h1>

@@ -6,7 +6,11 @@
   function load_jquery() {
       if ( !is_admin() ) {
         wp_deregister_script('jquery');
-        wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"), false);
+        //wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"), false);
+        wp_register_script(
+          'jquery',
+          get_template_directory_uri() . '/_/js/jquery.js'
+        );
         //wp_enqueue_script('jquery'); //uncomment to load jQuery always
       }
     }
@@ -89,7 +93,7 @@
     wp_nav_menu(array(
       'menu'            => 'main_nav',
       'theme_location'  => 'main_nav',
-      'depth'           =>  1, // TODO: submenus
+      'depth'           =>  1, 
       'container'       => 'nav',
       'container_class' => 'header-navigation',
       'href_class'      => 'menu-item-link',

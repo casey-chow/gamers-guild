@@ -671,7 +671,7 @@ sub {
 .page-blog .section-selector {
   float: left;
   height: 100%;
-  padding-right: 2.35%; /* TODO: Align this */
+  padding-right: 2.35%; 
   padding-bottom: 5%;
   text-align: right;
   width: 23.82%; /* 2 col, 1.5 gut // 142 / 596 */
@@ -739,7 +739,9 @@ a.menu-item-link {
   color: black;
 }
 
-.current-menu-item .menu-item-link {
+.current-menu-item .menu-item-link,
+.current-page-ancestor .menu-item-link,
+.page-blog .current_page_parent .menu-item-link {
   color: #06c;
 }
 
