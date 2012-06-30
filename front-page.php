@@ -21,9 +21,15 @@
         ?>
         <section class="page-section page-<?php the_slug($page_id); ?>">
           <h1 class="section-name"><?php echo $title; ?></h1>
+
           <div class="page-section-inner group">
           <?php 
             $template = get_post_meta($page_id, '_wp_page_template', true);
+            if (in_category('Home', $page_id)):
+          ?>
+              <img src="<?php echo get_template_directory_uri(); ?>/_/img/logo.png" alt="Gamers Guild Logo" class="logo" />
+          <?php
+            endif;
             if (in_category('Blog', $page_id)):
           ?>
               <nav class="section-selector">
