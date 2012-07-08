@@ -696,6 +696,10 @@ sub {
   font-family: 'PT Sans Bold';
 }
 
+.page-blog .follow-through::after {
+  content: ' »';
+}
+
 /* -Calendar Page */
 
 .page-calendar .page-section-inner {
