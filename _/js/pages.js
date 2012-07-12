@@ -1,3 +1,5 @@
+// Loads only on front page 
+
 $(function() {
   // As a hackish fix to changing all the ids into classes
   $('.page-section').each(function() {

@@ -1,3 +1,5 @@
+// Loaded on every page
+
 $(function() {
   var $section = $('.page-template-page-section-php');
   if ($section.length > 0) {
