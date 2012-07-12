@@ -24,8 +24,8 @@
           array('jquery')
         );
         wp_enqueue_script(
-          'pages_js', 
-          get_template_directory_uri() . '/_/js/pages.js',
+          'front-page-js', 
+          get_template_directory_uri() . '/_/js/front-page.js',
           array('jquery', 'waypoints')
         );
       }
