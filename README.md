@@ -34,3 +34,22 @@ Breakpoints:
 * 768px
 * 481px
 * 320px
+
+Required Plugins
+=================
+
+* [Improved Include Page](http://wordpress.org/extend/plugins/improved-include-page/)
+* [Map Categories to Pages](http://wordpress.org/extend/plugins/map-categories-to-pages/)
+* [WP Page Navi](http://wordpress.org/extend/plugins/wp-pagenavi/)
+
+Theming
+=======
+
+Unfortunately I haven't had time to figure out a better way to get this done.
+
+In order to get everything in order for a new info page, there are three things you
+must do:
+
+1. Set the category to 'Info' and only 'Info'. This sets up the theming.
+2. Make the page a subpage of the Info page. This sets up the site map.
+3. Set the page template to 'Section'. This adds the section navigation on the left.
