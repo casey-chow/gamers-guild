@@ -26,7 +26,7 @@
         wp_enqueue_script(
           'front-page-js', 
           get_template_directory_uri() . '/_/js/front-page.js',
-          array('jquery', 'waypoints')
+          array('jquery', 'waypoints', 'app_js')
         );
       }
     }
@@ -176,4 +176,5 @@
       endwhile; endif;
       wp_reset_query();
     }
+
 ?>

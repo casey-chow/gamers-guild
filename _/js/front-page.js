@@ -155,6 +155,35 @@ $(function() {
     scroll_to($target);
   });
 
+
+  /* Ajax Loading for the Info Page
+   * ---------------------------------------------- */
+  $('.page-info .page_item a').click(function() {
+    var $this = $(this);
+    var $pageinfo = $('.page-info');
+    var url = $this.attr('href');
+    var content;
+
+    $pageinfo
+      .find('.text-article')
+      .load(url + ' .text-article', function() {
+        //now replace that with the child .text-article
+        $(this)
+          .find('.text-article')
+          .unwrap()
+          .find(find)
+
+        rejig_section_selectors();
+      });
+
+    $('.page-section.page-info .page_item a')
+      .css('color', '#06C');
+    $(this).css('color', '#C00');
+
+
+    return false;
+  });
+
 });
 
 /*
