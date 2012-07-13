@@ -16,6 +16,15 @@
     }
     add_action('wp_enqueue_scripts', 'load_jquery');
 
+  function load_app_scripts() {
+      wp_enqueue_script(
+        'app_js',
+        get_template_directory_uri() . '/_/js/app.js',
+        array('jquery')
+      );
+    }
+    add_action('wp_enqueue_scripts', 'load_app_scripts');
+
   function load_home_scripts() {
       if (is_front_page()) {
         wp_enqueue_script(
@@ -32,14 +41,12 @@
     }
     add_action('wp_enqueue_scripts', 'load_home_scripts');
 
-  function load_app_scripts() {
-      wp_enqueue_script(
-        'app_js',
-        get_template_directory_uri() . '/_/js/app.js',
-        array('jquery')
-      );
+  function category_list_to_radio(){
+      echo '<script type="text/javascript">';
+      echo 'jQuery("#categorychecklist input, #categorychecklist-pop input, .cat-checklist input")';
+      echo '.each(function(){this.type="radio"});</script>';
     }
-    add_action('wp_enqueue_scripts', 'load_app_scripts');
+    add_action( 'admin_footer', 'category_list_to_radio' );
 
 	// Clean up the <head>
 	function removeHeadLinks() {
